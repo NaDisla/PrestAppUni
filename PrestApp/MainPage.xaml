@@ -15,8 +15,7 @@
                    HorizontalOptions="Center"
            FontAttributes="Bold"
            FontSize="20"
-           TextColor="Honeydew"
-                   FontFamily="Consolas"/>
+           TextColor="Honeydew"/>
         </StackLayout>
 
         <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="#499438"/>
