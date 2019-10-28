@@ -17,5 +17,8 @@ namespace PrestApp
         {
             InitializeComponent();
         }
+        private void TxtUsuario_Focused(object sender, FocusEventArgs e)
+        {
+        }
     }
 }
