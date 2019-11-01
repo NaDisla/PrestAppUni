@@ -22,7 +22,7 @@
         <Entry x:Name="txtPass" Placeholder="Contraseña" PlaceholderColor="#499438" Margin="20, 15" FontAttributes="Bold" IsPassword="True"/>
         <Switch Margin="-50, 10, 245, -55" Scale="0.7"/>
         <Label Text="Recordar mi usuario" FontSize="16" HorizontalOptions="Center" Margin="15, 15, -10, 5" FontAttributes="Bold"/>
-        <Button x:Name="btnLogin" Text="Iniciar sesión" HorizontalOptions="Center" WidthRequest="180" Margin="20" BackgroundColor="ForestGreen" TextColor="White" BorderWidth="3" BorderColor="White" CornerRadius="15"/>
+        <Button x:Name="btnLogin" Text="Iniciar sesión" HorizontalOptions="Center" WidthRequest="180" Margin="20" BackgroundColor="ForestGreen" TextColor="White" BorderWidth="3" BorderColor="White" CornerRadius="15" Clicked="BtnLogin_Clicked"/>
         <Label Text="Olvidé mi contraseña" HorizontalOptions="Center" FontSize="15"/>
     </StackLayout>
 

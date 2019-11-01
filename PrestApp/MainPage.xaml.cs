@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Widget;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -19,6 +20,12 @@ namespace PrestApp
         }
         private void TxtUsuario_Focused(object sender, FocusEventArgs e)
         {
+
+        }
+
+        private void BtnLogin_Clicked(object sender, EventArgs e)
+        {
+            Toast.MakeText(MainPage.Con, "hola", ToastLength.Short).Show();
         }
     }
 }
