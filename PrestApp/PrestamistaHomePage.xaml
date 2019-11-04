@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
             <Frame BackgroundColor="Honeydew" HeightRequest="10" HasShadow="True">
-                <Label Text="PrestApp" TextColor="#499438" FontSize="15" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="PrestApp" TextColor="#499438" FontSize="15" FontAttributes="Bold"></Label>
             </Frame>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.IO;
 using Foundation;
 using UIKit;
 
@@ -23,7 +23,12 @@ namespace PrestApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            string nombreArchivo = "BD_PrestApp.sqlite";
+            string rutaCarpeta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..", "Library", "Databases");
+            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
+
+            LoadApplication(new App(rutaCompleta));
 
             return base.FinishedLaunching(app, options);
         }
