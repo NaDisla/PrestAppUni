@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="PrestApp.MainPage">
 
-    <StackLayout BackgroundColor="#BBDB97">
+    <StackLayout BackgroundColor="White">
         <!-- Place new controls here -->
         <StackLayout Orientation="Vertical" VerticalOptions="Center">
         <Image Source="logoV2.png" WidthRequest="150"
@@ -15,7 +15,7 @@
                    HorizontalOptions="Center"
            FontAttributes="Bold"
            FontSize="20"
-           TextColor="Honeydew"/>
+           TextColor="#499438"/>
         </StackLayout>
 
         <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="#499438" Margin="20, 15" FontAttributes="Bold" Focused="TxtUsuario_Focused"/>

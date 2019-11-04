@@ -1,5 +1,4 @@
-﻿using Android.Widget;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -25,7 +24,7 @@ namespace PrestApp
 
         private void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            Toast.MakeText(MainPage.Con, "hola", ToastLength.Short).Show();
+            DisplayAlert("Mensaje de alerta", "Ha presionado el botón", "OK");
         }
     }
 }
