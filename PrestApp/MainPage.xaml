@@ -6,26 +6,29 @@
              mc:Ignorable="d"
              x:Class="PrestApp.MainPage">
 
-    <StackLayout BackgroundColor="White" NavigationPage.HasNavigationBar="False">
+    <StackLayout BackgroundColor="#3E6435" NavigationPage.HasNavigationBar="False">
         
         <StackLayout Orientation="Vertical" VerticalOptions="Center">
-            <Image Source="logoV2.png" WidthRequest="150"
-               Margin="30"/>
+            <Frame Padding="5" HasShadow="True" BorderColor="White" BackgroundColor="Transparent" CornerRadius="20" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center">
+                <StackLayout Padding="15" Orientation="Vertical">
+                    <Image Source="logoV2.png" Margin="-10" WidthRequest="150" HeightRequest="150" />
+                </StackLayout>
+            </Frame>
             <Label Text="¡Bienvenido a PrestApp!"
                    HorizontalOptions="Center"
            FontAttributes="Bold"
            FontSize="20"
-           TextColor="#499438"/>
+           TextColor="White"/>
         </StackLayout>
 
-        <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="#499438" Margin="20, 15" FontAttributes="Bold" Focused="TxtUsuario_Focused"/>
-        <Entry x:Name="txtPass" Placeholder="Contraseña" PlaceholderColor="#499438" Margin="20, 15" FontAttributes="Bold" IsPassword="True"/>
+        <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="White" Margin="20, 15" FontAttributes="Bold" Focused="TxtUsuario_Focused"/>
+        <Entry x:Name="txtPass" Placeholder="Contraseña" PlaceholderColor="White" Margin="20, 15" FontAttributes="Bold" IsPassword="True"/>
         <Switch Margin="-50, 10, 245, -55" Scale="0.7"/>
-        <Label Text="Recordar mi usuario" FontSize="16" HorizontalOptions="Center" Margin="15, 15, -10, 5" FontAttributes="Bold"/>
+        <Label Text="Recordar mi usuario" FontSize="16" HorizontalOptions="Center" Margin="15, 15, -10, 5" FontAttributes="Bold" TextColor="White"/>
         <Button x:Name="btnLogin" Text="Iniciar sesión" HorizontalOptions="Center" WidthRequest="180" Margin="20" BackgroundColor="ForestGreen" TextColor="White" BorderWidth="3" BorderColor="White" CornerRadius="15" Clicked="BtnLogin_Clicked"/>
-        <Label Text="Olvidé mi contraseña" HorizontalOptions="Center" FontSize="15"/>
-        <Label Text="¿No tienes una cuenta?"/>
-        <Label Text="Regístrate"/>
+        <Label Text="Olvidé mi contraseña" HorizontalOptions="Center" FontSize="15" TextColor="White"/>
+        <Label Text="¿No tienes una cuenta?" TextColor="White"/>
+        <Label Text="Regístrate" TextColor="White"/>
     </StackLayout>
 
 </ContentPage>
