@@ -16,6 +16,7 @@ namespace PrestApp
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         private void TxtUsuario_Focused(object sender, FocusEventArgs e)
         {
@@ -25,6 +26,7 @@ namespace PrestApp
         private void BtnLogin_Clicked(object sender, EventArgs e)
         {
             DisplayAlert("Mensaje de alerta", "Ha presionado el botón", "OK");
+            Navigation.PushAsync(new RegistroRolesPage());
         }
     }
 }

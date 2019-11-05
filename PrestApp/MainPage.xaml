@@ -6,10 +6,10 @@
              mc:Ignorable="d"
              x:Class="PrestApp.MainPage">
 
-    <StackLayout BackgroundColor="White">
-        <!-- Place new controls here -->
+    <StackLayout BackgroundColor="White" NavigationPage.HasNavigationBar="False">
+        
         <StackLayout Orientation="Vertical" VerticalOptions="Center">
-        <Image Source="logoV2.png" WidthRequest="150"
+            <Image Source="logoV2.png" WidthRequest="150"
                Margin="30"/>
             <Label Text="¡Bienvenido a PrestApp!"
                    HorizontalOptions="Center"
@@ -24,6 +24,8 @@
         <Label Text="Recordar mi usuario" FontSize="16" HorizontalOptions="Center" Margin="15, 15, -10, 5" FontAttributes="Bold"/>
         <Button x:Name="btnLogin" Text="Iniciar sesión" HorizontalOptions="Center" WidthRequest="180" Margin="20" BackgroundColor="ForestGreen" TextColor="White" BorderWidth="3" BorderColor="White" CornerRadius="15" Clicked="BtnLogin_Clicked"/>
         <Label Text="Olvidé mi contraseña" HorizontalOptions="Center" FontSize="15"/>
+        <Label Text="¿No tienes una cuenta?"/>
+        <Label Text="Regístrate"/>
     </StackLayout>
 
 </ContentPage>

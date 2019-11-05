@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PrestApp.RegistroClientes">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Frame BackgroundColor="Honeydew" HeightRequest="10" HasShadow="True">
+                <Label Text="PrestApp - Nuevo Cliente" TextColor="#499438" FontSize="15" FontAttributes="Bold"></Label>
+            </Frame>
+            <Entry x:Name="txtNombres" Placeholder="Nombres" PlaceholderColor="#499438" Margin="20, 15" FontSize="Body" FontAttributes="Bold"/>
+            <Entry x:Name="txtApellidos" Placeholder="Apellidos" PlaceholderColor="#499438" Margin="20, 15" FontSize="Body" FontAttributes="Bold" IsPassword="True"/>
+            <Label Text="Género: " Margin="10, 15, 5, 10"/>
+            <Picker x:Name="cmbGénero" WidthRequest="100" Margin="-50, -50, 50, 10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -10,14 +10,14 @@ namespace PrestApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
         public static string _rutaBD;
         public App(string rutaBD)
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
 
             _rutaBD = rutaBD;
         }
