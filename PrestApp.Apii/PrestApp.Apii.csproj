@@ -9,13 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Prestapp.BusinessL\Prestapp.BusinessL.csproj" />
-    <ProjectReference Include="..\Prestapp.Data\Prestapp.Data.csproj" />
+    <ProjectReference Include="..\Prestapp.BusinessL\PrestApp.BusinessL.csproj" />
+    <ProjectReference Include="..\Prestapp.Data\PrestApp.Data.csproj" />
   </ItemGroup>
 
 </Project>

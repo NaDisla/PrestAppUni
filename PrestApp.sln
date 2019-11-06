@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrestApp", "PrestApp\PrestA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrestApp.Apii", "PrestApp.Apii\PrestApp.Apii.csproj", "{23931D53-9A02-4222-A495-B1B259049263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestapp.BusinessL", "Prestapp.BusinessL\Prestapp.BusinessL.csproj", "{C8947724-9685-4B81-9557-F400AAA829EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrestApp.BusinessL", "Prestapp.BusinessL\PrestApp.BusinessL.csproj", "{C8947724-9685-4B81-9557-F400AAA829EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prestapp.Data", "Prestapp.Data\Prestapp.Data.csproj", "{D5EB897F-8D4E-4076-8F6E-3B27BA119B77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrestApp.Data", "Prestapp.Data\PrestApp.Data.csproj", "{D5EB897F-8D4E-4076-8F6E-3B27BA119B77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

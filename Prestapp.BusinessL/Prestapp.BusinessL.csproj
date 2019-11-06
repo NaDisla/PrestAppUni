@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Prestapp.Data\Prestapp.Data.csproj" />
+    <ProjectReference Include="..\Prestapp.Data\PrestApp.Data.csproj" />
   </ItemGroup>
 
 </Project>
