@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Prestapp.BusinessL\PrestApp.BusinessL.csproj" />
-    <ProjectReference Include="..\Prestapp.Data\PrestApp.Data.csproj" />
+    <ProjectReference Include="..\Prestapp.BusinessL\PrestApp.BusinessLogicc.csproj" />
+    <ProjectReference Include="..\Prestapp.Data\PrestApp.DataAccesss.csproj" />
   </ItemGroup>
 
 </Project>
