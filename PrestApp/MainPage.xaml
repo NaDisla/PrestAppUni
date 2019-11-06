@@ -20,7 +20,7 @@
            TextColor="White"/>
         </StackLayout>
 
-        <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="FFFFFF" Margin="20, 15" FontAttributes="Bold" Focused="TxtUsuario_Focused"/>
+        <Entry x:Name="txtUsuario" Placeholder="Usuario" PlaceholderColor="White" Margin="20, 15" FontAttributes="Bold" Focused="TxtUsuario_Focused"/>
         <Entry x:Name="txtPass" Placeholder="Contraseña" PlaceholderColor="White" Margin="20, 15" FontAttributes="Bold" IsPassword="True"/>
         <Switch Margin="-50, 10, 245, -55" Scale="0.7"/>
         <Label Text="Recordar mi usuario" FontSize="16" HorizontalOptions="Center" Margin="15, 15, -10, 5" FontAttributes="Bold" TextColor="White"/>
