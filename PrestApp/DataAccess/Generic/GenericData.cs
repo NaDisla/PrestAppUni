@@ -1,11 +1,11 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Text;
+using SQLite;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Prestapp.Data.DataAccess.Generic
+namespace PrestApp.Generic
 {
     public class GenericData<T> : IGenericData<T> where T : class, new()
     {
@@ -98,7 +98,7 @@ namespace Prestapp.Data.DataAccess.Generic
             {
                 throw e;
             }
-            
+
         }
     }
 }

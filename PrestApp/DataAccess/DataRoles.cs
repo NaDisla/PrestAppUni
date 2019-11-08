@@ -1,11 +1,11 @@
-﻿using Prestapp.Data.DataAccess.Generic;
-using PrestApp.Data.Models;
-using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
+using PrestApp.Generic;
+using PrestApp.Clases;
 
-namespace Prestapp.Data.DataAccess
+namespace PrestApp.DataAccess
 {
     public class DataRoles : GenericData<Roles>
     {

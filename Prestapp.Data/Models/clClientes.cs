@@ -17,7 +17,7 @@ namespace PrestApp.Data.Models
         }
 
         private int idUsuario;
-
+        
         public int IDUsuario
         {
             get { return idUsuario; }

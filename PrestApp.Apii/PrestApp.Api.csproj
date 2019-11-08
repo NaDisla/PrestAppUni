@@ -15,9 +15,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Prestapp.BusinessL\PrestApp.BusinessLogicc.csproj" />
-    <ProjectReference Include="..\Prestapp.Data\PrestApp.DataAccesss.csproj" />
-  </ItemGroup>
-
 </Project>
