@@ -7,20 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 using PrestApp.Clases;
 using PrestApp.Generic;
 
-namespace PrestApp.Apii.Controllers
+namespace PrestApp.Api.Controllers
 {
-    [Route("api/Roles")]
     [ApiController]
-    public class RolesController : ControllerBase
+    [Route("api/Usuarios")]
+    public class UsuariosController : ControllerBase
     {
         [Route("Get")]
         [HttpGet]
-        public ObjectResult ListRoles()
+        public ObjectResult ListUsers()
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
-                var roles = generic.Get();                
+                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
+                var roles = generic.Get();
                 return Ok(roles);
             }
             catch (Exception e)
@@ -32,11 +32,11 @@ namespace PrestApp.Apii.Controllers
 
         [Route("Get/{id}")]
         [HttpGet]
-        public ObjectResult GetRole(int id)
+        public ObjectResult GetUser(int id)
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
                 var roles = generic.Get(id);
                 return Ok(roles);
             }
@@ -49,11 +49,11 @@ namespace PrestApp.Apii.Controllers
 
         [Route("Insert/{id}")]
         [HttpGet]
-        public ObjectResult Insert(Roles Rol)
+        public ObjectResult Insert(ClUsuario Rol)
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
                 var roles = generic.Insert(Rol);
                 return Ok(roles);
             }
@@ -66,11 +66,11 @@ namespace PrestApp.Apii.Controllers
 
         [Route("Update")]
         [HttpGet]
-        public ObjectResult Update(Roles Rol)
+        public ObjectResult Update(ClUsuario Rol)
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
                 var roles = generic.Update(Rol);
                 return Ok(roles);
             }
@@ -83,11 +83,11 @@ namespace PrestApp.Apii.Controllers
 
         [Route("Delete/{id}")]
         [HttpGet]
-        public ObjectResult Delete(Roles id)
+        public ObjectResult Delete(ClUsuario id)
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
                 var roles = generic.Delete(id);
                 return Ok(roles);
             }

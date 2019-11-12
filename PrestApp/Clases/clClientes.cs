@@ -5,7 +5,7 @@ using SQLite;
 
 namespace PrestApp.Clases
 {
-    public class clClientes
+    public class ClClientes
     {
         private int idCliente;
 
@@ -14,14 +14,6 @@ namespace PrestApp.Clases
         {
             get { return idCliente; }
             set { idCliente = value; }
-        }
-
-        private int idUsuario;
-
-        public int IDUsuario
-        {
-            get { return idUsuario; }
-            set { idUsuario = value; }
         }
 
         private int idTítuloAcdm;
