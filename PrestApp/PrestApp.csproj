@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Gorilla</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -9,7 +10,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Gorilla|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0-preview2.19553.1" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="sqlite" Version="3.13.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.7.302-beta" />
@@ -27,25 +34,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="RegistroClientesPage.xaml.cs">
+    <Compile Update="Pages\Clientes\RegistroClientesPage.xaml.cs">
       <DependentUpon>RegistroClientesPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="GestorCobroPage.xaml">
+    <EmbeddedResource Update="Pages\GestorCobros\GestorCobroPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ListaRolesPage.xaml">
+    <EmbeddedResource Update="Pages\Roles\ListaRolesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PrestamistaHomePage.xaml">
+    <EmbeddedResource Update="Pages\Prestamista\PrestamistaHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RegistroClientesPage.xaml">
+    <EmbeddedResource Update="Pages\Clientes\RegistroClientesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RegistroRolesPage.xaml">
+    <EmbeddedResource Update="Pages\Roles\RegistroRolesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
