@@ -11,10 +11,12 @@ namespace PrestApp.Generic
     public class Generic<T> : IGeneric<T> where T : class, new()
     {
         protected SQLiteConnection db;
-
-        public Generic(string dbPath)
+        static string nombreArchivo = "BD_PrestApp.sqlite";
+        static string rutaCarpeta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        static string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
+        public Generic()
         {
-            db = new SQLiteConnection(dbPath);
+            db = new SQLiteConnection(rutaCompleta);
             db.CreateTable<T>();
         }
 

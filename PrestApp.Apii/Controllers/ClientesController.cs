@@ -17,12 +17,9 @@ namespace PrestApp.Api.Controllers
         [HttpGet]
         public ObjectResult ListClients()
         {
-            string nombreArchivo = "BD_PrestApp.sqlite";
-            string rutaCarpeta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>(rutaCompleta);
+                IGeneric<clClientes> generic = new Generic<clClientes>();
                 var clients = generic.Get();
                 return Ok(clients);
             }
@@ -37,12 +34,9 @@ namespace PrestApp.Api.Controllers
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
-            string nombreArchivo = "BD_PrestApp.sqlite";
-            string rutaCarpeta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>(rutaCompleta);
+                IGeneric<clClientes> generic = new Generic<clClientes>();
                 var clients = generic.Get(id);
                 return Ok(clients);
             }
@@ -57,12 +51,9 @@ namespace PrestApp.Api.Controllers
         [HttpGet]
         public ObjectResult Insert(clClientes client)
         {
-            string nombreArchivo = "BD_PrestApp.sqlite";
-            string rutaCarpeta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>(rutaCompleta);
+                IGeneric<clClientes> generic = new Generic<clClientes>();
                 var clients = generic.Insert(client);
                 return Ok(clients);
             }
@@ -77,12 +68,9 @@ namespace PrestApp.Api.Controllers
         [HttpGet]
         public ObjectResult Update(clClientes client)
         {
-            string nombreArchivo = "BD_PrestApp.sqlite";
-            string rutaCarpeta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>(rutaCompleta);
+                IGeneric<clClientes> generic = new Generic<clClientes>();
                 var clients = generic.Update(client);
                 return Ok(clients);
             }
@@ -97,12 +85,9 @@ namespace PrestApp.Api.Controllers
         [HttpGet]
         public ObjectResult Delete(clClientes id)
         {
-            string nombreArchivo = "BD_PrestApp.sqlite";
-            string rutaCarpeta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>(rutaCompleta);
+                IGeneric<clClientes> generic = new Generic<clClientes>();
                 var ok = generic.Delete(id);
                 return Ok(ok);
             }
