@@ -16,14 +16,6 @@ namespace PrestApp.Clases
             set { idCliente = value; }
         }
 
-        private int idUsuario;
-
-        public int IDUsuario
-        {
-            get { return idUsuario; }
-            set { idUsuario = value; }
-        }
-
         private int idTítuloAcdm;
 
         public int IDTítuloAcdm
