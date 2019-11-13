@@ -5,7 +5,7 @@ using SQLite;
 
 namespace PrestApp.Clases
 {
-    public class clClientes
+    public class ClClientes
     {
         private int idCliente;
 

@@ -19,7 +19,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>();
+                IGeneric<ClClientes> generic = new Generic<ClClientes>();
                 var clients = generic.Get();
                 return Ok(clients);
             }
@@ -36,7 +36,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>();
+                IGeneric<ClClientes> generic = new Generic<ClClientes>();
                 var clients = generic.Get(id);
                 return Ok(clients);
             }
@@ -49,11 +49,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Insert/{id}")]
         [HttpGet]
-        public ObjectResult Insert(clClientes client)
+        public ObjectResult Insert(ClClientes client)
         {
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>();
+                IGeneric<ClClientes> generic = new Generic<ClClientes>();
                 var clients = generic.Insert(client);
                 return Ok(clients);
             }
@@ -66,11 +66,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Update")]
         [HttpGet]
-        public ObjectResult Update(clClientes client)
+        public ObjectResult Update(ClClientes client)
         {
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>();
+                IGeneric<ClClientes> generic = new Generic<ClClientes>();
                 var clients = generic.Update(client);
                 return Ok(clients);
             }
@@ -83,11 +83,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Delete/{id}")]
         [HttpGet]
-        public ObjectResult Delete(clClientes id)
+        public ObjectResult Delete(ClClientes id)
         {
             try
             {
-                IGeneric<clClientes> generic = new Generic<clClientes>();
+                IGeneric<ClClientes> generic = new Generic<ClClientes>();
                 var ok = generic.Delete(id);
                 return Ok(ok);
             }

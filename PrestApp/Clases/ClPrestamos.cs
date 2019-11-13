@@ -14,7 +14,7 @@ namespace PrestApp.Clases
 
         public int Cli_ID { get; set; }
         [ForeignKey("Cli_ID")]
-        public clClientes cliente { get; set; }
+        public ClClientes Cliente { get; set; }
 
         public double Prest_Monto { get; set; }
 
