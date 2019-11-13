@@ -1,17 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PrestApp.Clases;
-using PrestApp.Generic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using PrestApp.Clases;
+using PrestApp.Generic;
+
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/Prestamos")]
+    [Route("api/Pagos")]
     [ApiController]
-    public class PrestamosController : ControllerBase
+    public class PagosController : ControllerBase
     {
 
         [Route("Get")]
@@ -20,9 +21,9 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamos = generic.Get();
-                return Ok(prestamos);
+                IGeneric<ClPagos> generic = new Generic<ClPagos>();
+                var pagos = generic.Get();
+                return Ok(pagos );
             }
             catch (Exception e)
             {
@@ -37,9 +38,9 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamo = generic.Get(id);
-                return Ok(prestamo);
+                IGeneric<ClPagos> generic = new Generic<ClPagos>();
+                var pago = generic.Get(id);
+                return Ok(pago);
             }
             catch (Exception e)
             {
@@ -50,13 +51,13 @@ namespace PrestApp.Api.Controllers
 
         [Route("Insert")]
         [HttpGet]
-        public ObjectResult Insert(ClPrestamos client)
+        public ObjectResult Insert(ClPagos pago)
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamo = generic.Insert(client);
-                return Ok(prestamo);
+                IGeneric<ClPagos> generic = new Generic<ClPagos>();
+                var pagos = generic.Insert(pago);
+                return Ok(pagos);
             }
             catch (Exception e)
             {
@@ -67,12 +68,12 @@ namespace PrestApp.Api.Controllers
 
         [Route("Update")]
         [HttpGet]
-        public ObjectResult Update(ClPrestamos client)
+        public ObjectResult Update(ClPagos pago)
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamo = generic.Update(client);
+                IGeneric<ClPagos> generic = new Generic<ClPagos>();
+                var prestamo = generic.Update(pago);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -84,11 +85,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Delete")]
         [HttpGet]
-        public ObjectResult Delete(ClPrestamos id)
+        public ObjectResult Delete(ClPagos id)
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
+                IGeneric<ClPagos> generic = new Generic<ClPagos>();
                 var ok = generic.Delete(id);
                 return Ok(ok);
             }
