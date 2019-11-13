@@ -13,19 +13,19 @@ namespace PrestApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaRolesPage : ContentPage
     {
-        List<Roles> listaRoles;
+        List<ClRoles> listaRoles;
         public ListaRolesPage()
         {
             InitializeComponent();
-            listaRoles = new List<Roles>();
+            listaRoles = new List<ClRoles>();
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
             using(var conn = new SQLiteConnection(App._rutaBD))
             {
-                conn.CreateTable<Roles>();
-                listaRoles = conn.Table<Roles>().ToList();
+                conn.CreateTable<ClRoles>();
+                listaRoles = conn.Table<ClRoles>().ToList();
 
                 rolesListView.ItemsSource = listaRoles;
             }
