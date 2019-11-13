@@ -5,7 +5,7 @@ using SQLite;
 
 namespace PrestApp.Clases
 {
-    public class Roles
+    public class ClRoles
     {
         private int idRol;
         [PrimaryKey, AutoIncrement]

@@ -20,15 +20,21 @@ namespace PrestApp
 
         private void BtnRegistroRol_Clicked(object sender, EventArgs e)
         {
-            Roles nuevoRol = new Roles()
+            if(txtNombre.Text == "Nombre")
             {
-                Nombre = txtNombre.Text
-            };
-
-            using (var conn = new SQLiteConnection(App._rutaBD))
+                DisplayAlert("Campo vacío", "No es posible ingresar datos nulos.", "OK");
+            }
+            else
             {
-                conn.CreateTable<Roles>();
-                conn.Insert(nuevoRol);
+                ClRoles nuevoRol = new ClRoles()
+                {
+                    Nombre = txtNombre.Text
+                };
+                using (var conn = new SQLiteConnection(App._rutaBD))
+                {
+                    conn.CreateTable<ClRoles>();
+                    conn.Insert(nuevoRol);
+                }
             }
         }
 

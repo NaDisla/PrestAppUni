@@ -7,7 +7,7 @@ using SQLite;
 
 namespace PrestApp.Clases
 {
-    public class ClUsuario
+    public class ClUsuarios
     {
         [PrimaryKey, AutoIncrement]
         public int Usu_ID { get; set; }
@@ -15,7 +15,7 @@ namespace PrestApp.Clases
         public int Rol_ID { get; set; }
 
         [ForeignKey("Rol_ID")]
-        public Roles Rol { get; set; }
+        public ClRoles Rol { get; set; }
 
         [Required]
         [SQLite.MaxLength(80)]
