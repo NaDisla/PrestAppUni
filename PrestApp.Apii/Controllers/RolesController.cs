@@ -19,7 +19,7 @@ namespace PrestApp.Apii.Controllers
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClRoles> generic = new Generic<ClRoles>();
                 var roles = generic.Get();                
                 return Ok(roles);
             }
@@ -36,7 +36,7 @@ namespace PrestApp.Apii.Controllers
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClRoles> generic = new Generic<ClRoles>();
                 var roles = generic.Get(id);
                 return Ok(roles);
             }
@@ -49,11 +49,11 @@ namespace PrestApp.Apii.Controllers
 
         [Route("Insert/{id}")]
         [HttpGet]
-        public ObjectResult Insert(Roles Rol)
+        public ObjectResult Insert(ClRoles Rol)
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClRoles> generic = new Generic<ClRoles>();
                 var roles = generic.Insert(Rol);
                 return Ok(roles);
             }
@@ -66,11 +66,11 @@ namespace PrestApp.Apii.Controllers
 
         [Route("Update")]
         [HttpGet]
-        public ObjectResult Update(Roles Rol)
+        public ObjectResult Update(ClRoles Rol)
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClRoles> generic = new Generic<ClRoles>();
                 var roles = generic.Update(Rol);
                 return Ok(roles);
             }
@@ -83,11 +83,11 @@ namespace PrestApp.Apii.Controllers
 
         [Route("Delete/{id}")]
         [HttpGet]
-        public ObjectResult Delete(Roles id)
+        public ObjectResult Delete(ClRoles id)
         {
             try
             {
-                IGeneric<Roles> generic = new Generic<Roles>();
+                IGeneric<ClRoles> generic = new Generic<ClRoles>();
                 var roles = generic.Delete(id);
                 return Ok(roles);
             }
