@@ -9,7 +9,7 @@ namespace PrestApp.Clases
     public class ClModalidadesDePago
     {
         [PrimaryKey, AutoIncrement]
-        public int MyProperty { get; set; }
+        public int ModPag_ID { get; set; }
 
         [MaxLength(30)]
         [Unique]
