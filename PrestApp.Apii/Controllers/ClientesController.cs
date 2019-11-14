@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Generic;
 using PrestApp.Clases;
-using PrestApp.Generic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,14 +13,14 @@ namespace PrestApp.Api.Controllers
     [ApiController]
     public class ClientesController : ControllerBase
     {
+        private ICRUDModel<ClClientes> generic = new CRUDModel<ClClientes>();
         [Route("Get")]
         [HttpGet]
         public ObjectResult ListClients()
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Get();
+                var clients = generic.ObtenerTodos();
                 return Ok(clients);
             }
             catch (Exception e)
@@ -36,8 +36,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Get(id);
+                var clients = generic.Obtener(id);
                 return Ok(clients);
             }
             catch (Exception e)
@@ -53,8 +52,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Insert(client);
+                var clients = generic.Insertar(client);
                 return Ok(clients);
             }
             catch (Exception e)
@@ -70,8 +68,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Update(client);
+                var clients = generic.Actualizar(client);
                 return Ok(clients);
             }
             catch (Exception e)
@@ -87,8 +84,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var ok = generic.Delete(id);
+                var ok = generic.Eliminar(id.IDCliente);
                 return Ok(ok);
             }
             catch (Exception e)

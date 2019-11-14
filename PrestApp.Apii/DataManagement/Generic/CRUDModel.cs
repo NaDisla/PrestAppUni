@@ -146,7 +146,8 @@ namespace PrestApp.Api.DataManagement.Generic
                     var res = dbSet.Add(entity);
                     dataContext.SaveChanges();
                     tran.Commit();
-                    return res;
+                    return null;
+//                    return res;
                 }
                 catch (Exception e)
                 {
@@ -378,4 +379,4 @@ namespace PrestApp.Api.DataManagement.Generic
 
     }
 }
-}
+

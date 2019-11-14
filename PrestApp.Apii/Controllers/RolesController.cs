@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Generic;
 using PrestApp.Clases;
-using PrestApp.Generic;
 
 namespace PrestApp.Apii.Controllers
 {
@@ -13,14 +13,15 @@ namespace PrestApp.Apii.Controllers
     [ApiController]
     public class RolesController : ControllerBase
     {
+        private ICRUDModel<ClRoles> generic = new CRUDModel<ClRoles>();
+
         [Route("Get")]
         [HttpGet]
         public ObjectResult ListRoles()
         {
             try
             {
-                IGeneric<ClRoles> generic = new Generic<ClRoles>();
-                var roles = generic.Get();                
+                var roles = generic.ObtenerTodos();
                 return Ok(roles);
             }
             catch (Exception e)
@@ -36,8 +37,7 @@ namespace PrestApp.Apii.Controllers
         {
             try
             {
-                IGeneric<ClRoles> generic = new Generic<ClRoles>();
-                var roles = generic.Get(id);
+                var roles = generic.Obtener(id);
                 return Ok(roles);
             }
             catch (Exception e)
@@ -53,8 +53,7 @@ namespace PrestApp.Apii.Controllers
         {
             try
             {
-                IGeneric<ClRoles> generic = new Generic<ClRoles>();
-                var roles = generic.Insert(Rol);
+                var roles = generic.Insertar(Rol);
                 return Ok(roles);
             }
             catch (Exception e)
@@ -70,8 +69,7 @@ namespace PrestApp.Apii.Controllers
         {
             try
             {
-                IGeneric<ClRoles> generic = new Generic<ClRoles>();
-                var roles = generic.Update(Rol);
+                var roles = generic.Actualizar(Rol);
                 return Ok(roles);
             }
             catch (Exception e)
@@ -87,8 +85,7 @@ namespace PrestApp.Apii.Controllers
         {
             try
             {
-                IGeneric<ClRoles> generic = new Generic<ClRoles>();
-                var roles = generic.Delete(id);
+                var roles = generic.Eliminar(id.IDRol);
                 return Ok(roles);
             }
             catch (Exception e)

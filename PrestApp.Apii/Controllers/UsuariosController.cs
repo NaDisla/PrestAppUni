@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Generic;
 using PrestApp.Clases;
-using PrestApp.Generic;
 
 namespace PrestApp.Api.Controllers
 {
@@ -13,14 +13,15 @@ namespace PrestApp.Api.Controllers
     [Route("api/Usuarios")]
     public class UsuariosController : ControllerBase
     {
+        private ICRUDModel<ClUsuarios> generic = new CRUDModel<ClUsuarios>();
+
         [Route("Get")]
         [HttpGet]
         public ObjectResult ListUsers()
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
-                var roles = generic.Get();
+                var roles = generic.ObtenerTodos();
                 return Ok(roles);
             }
             catch (Exception e)
@@ -36,8 +37,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
-                var roles = generic.Get(id);
+                var roles = generic.Obtener(id);
                 return Ok(roles);
             }
             catch (Exception e)
@@ -49,12 +49,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Insert/{id}")]
         [HttpGet]
-        public ObjectResult Insert(ClUsuario Rol)
+        public ObjectResult Insert(ClUsuarios Rol)
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
-                var roles = generic.Insert(Rol);
+                var roles = generic.Insertar(Rol);
                 return Ok(roles);
             }
             catch (Exception e)
@@ -66,12 +65,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Update")]
         [HttpGet]
-        public ObjectResult Update(ClUsuario Rol)
+        public ObjectResult Update(ClUsuarios Rol)
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
-                var roles = generic.Update(Rol);
+                var roles = generic.Actualizar(Rol);
                 return Ok(roles);
             }
             catch (Exception e)
@@ -83,12 +81,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Delete/{id}")]
         [HttpGet]
-        public ObjectResult Delete(ClUsuario id)
+        public ObjectResult Delete(ClUsuarios id)
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
-                var roles = generic.Delete(id);
+                var roles = generic.Eliminar(id.Usu_ID);
                 return Ok(roles);
             }
             catch (Exception e)

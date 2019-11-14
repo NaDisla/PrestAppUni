@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Generic;
 using PrestApp.Clases;
-using PrestApp.Generic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +13,7 @@ namespace PrestApp.Api.Controllers
     [ApiController]
     public class PrestamosController : ControllerBase
     {
+        private ICRUDModel<ClPrestamos> generic = new CRUDModel<ClPrestamos>();
 
         [Route("Get")]
         [HttpGet]
@@ -20,8 +21,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamos = generic.Get();
+                var prestamos = generic.ObtenerTodos();
                 return Ok(prestamos);
             }
             catch (Exception e)
@@ -37,8 +37,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamo = generic.Get(id);
+                var prestamo = generic.Obtener(id);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -54,8 +53,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamo = generic.Insert(client);
+                var prestamo = generic.Insertar(client);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -71,8 +69,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var prestamo = generic.Update(client);
+                var prestamo = generic.Actualizar(client);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -88,8 +85,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPrestamos> generic = new Generic<ClPrestamos>();
-                var ok = generic.Delete(id);
+                var ok = generic.Eliminar(id.Cli_ID);
                 return Ok(ok);
             }
             catch (Exception e)

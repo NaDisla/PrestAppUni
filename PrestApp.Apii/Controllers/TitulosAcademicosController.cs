@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Generic;
 using PrestApp.Clases;
-using PrestApp.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +12,15 @@ namespace PrestApp.Api.Controllers
     [Route("api/TitulosAcademicos")]
     public class TitulosAcademicosController : ControllerBase
     {
+        private ICRUDModel<ClTitulosAcademicos> generic = new CRUDModel<ClTitulosAcademicos>();
+
         [Route("Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
             try
             {
-                IGeneric<ClTitulosAcademicos> generic = new Generic<ClTitulosAcademicos>();
-                var titulosAcademicos = generic.Get();
+                var titulosAcademicos = generic.ObtenerTodos();
                 return Ok(titulosAcademicos);
             }
             catch (Exception e)
@@ -35,8 +36,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClTitulosAcademicos> generic = new Generic<ClTitulosAcademicos>();
-                var tituloAcademico = generic.Get(id);
+                var tituloAcademico = generic.Obtener(id);
                 return Ok(tituloAcademico);
             }
             catch (Exception e)
@@ -52,8 +52,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClTitulosAcademicos> generic = new Generic<ClTitulosAcademicos>();
-                var result = generic.Insert(tituloAcademico);
+                var result = generic.Insertar(tituloAcademico);
                 return Ok(result);
             }
             catch (Exception e)
@@ -69,8 +68,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClTitulosAcademicos> generic = new Generic<ClTitulosAcademicos>();
-                var result = generic.Update(tituloAcademico);
+                var result = generic.Actualizar(tituloAcademico);
                 return Ok(result);
             }
             catch (Exception e)
@@ -86,8 +84,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClTitulosAcademicos> generic = new Generic<ClTitulosAcademicos>();
-                var ok = generic.Delete(tituloAcademico);
+                var ok = generic.Eliminar(tituloAcademico.TitAcdm_ID);
                 return Ok(ok);
             }
             catch (Exception e)

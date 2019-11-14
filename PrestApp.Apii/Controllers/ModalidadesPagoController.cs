@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Generic;
 using PrestApp.Clases;
-using PrestApp.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +12,15 @@ namespace PrestApp.Api.Controllers
     [ApiController]
     public class ModalidadesPagoController : ControllerBase
     {
+        ICRUDModel<ClModalidadesDePago> generic = new CRUDModel<ClModalidadesDePago>();
+
         [Route("Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var pagos = generic.Get();
+                var pagos = generic.ObtenerTodos();
                 return Ok(pagos);
             }
             catch (Exception e)
@@ -35,8 +36,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var pago = generic.Get(id);
+                var pago = generic.Obtener(id);
                 return Ok(pago);
             }
             catch (Exception e)
@@ -52,8 +52,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var pagos = generic.Insert(pago);
+                var pagos = generic.Insertar(pago);
                 return Ok(pagos);
             }
             catch (Exception e)
@@ -69,8 +68,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var prestamo = generic.Update(pago);
+                var prestamo = generic.Actualizar(pago);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -86,8 +84,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var ok = generic.Delete(id);
+                var ok = generic.Eliminar(id.ModPag_ID);
                 return Ok(ok);
             }
             catch (Exception e)

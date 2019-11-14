@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Generic;
 using PrestApp.Clases;
-using PrestApp.Generic;
 
 
 namespace PrestApp.Api.Controllers
@@ -15,14 +15,15 @@ namespace PrestApp.Api.Controllers
     public class PagosController : ControllerBase
     {
 
+        ICRUDModel<ClPagos> generic = new CRUDModel<ClPagos>();
+
         [Route("Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
             try
             {
-                IGeneric<ClPagos> generic = new Generic<ClPagos>();
-                var pagos = generic.Get();
+                var pagos = generic.ObtenerTodos();
                 return Ok(pagos );
             }
             catch (Exception e)
@@ -38,8 +39,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPagos> generic = new Generic<ClPagos>();
-                var pago = generic.Get(id);
+                var pago = generic.Obtener(id);
                 return Ok(pago);
             }
             catch (Exception e)
@@ -55,8 +55,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPagos> generic = new Generic<ClPagos>();
-                var pagos = generic.Insert(pago);
+                var pagos = generic.Insertar(pago);
                 return Ok(pagos);
             }
             catch (Exception e)
@@ -72,8 +71,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPagos> generic = new Generic<ClPagos>();
-                var prestamo = generic.Update(pago);
+                var prestamo = generic.Actualizar(pago);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -89,8 +87,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClPagos> generic = new Generic<ClPagos>();
-                var ok = generic.Delete(id);
+                var ok = generic.Eliminar(id.Pag_ID);
                 return Ok(ok);
             }
             catch (Exception e)
