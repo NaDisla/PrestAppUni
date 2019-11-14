@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="DataManagement\Database\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
