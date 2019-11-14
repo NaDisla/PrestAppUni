@@ -172,11 +172,13 @@ namespace PrestApp.Api.DataManagement.Generic
             }
             catch (SqlException s)
             {
-                return false;
+                n.Rollback();
+                throw s;
             }
             catch (Exception e)
             {
-                return false;
+                n.Rollback();
+                throw e.InnerException ?? e;
             }
         }
 
@@ -189,11 +191,13 @@ namespace PrestApp.Api.DataManagement.Generic
             }
             catch (SqlException s)
             {
-                return false;
+                n.Rollback();
+                throw s;
             }
             catch (Exception e)
             {
-                return false;
+                n.Rollback();
+                throw e.InnerException ?? e;
             }
         }
         public bool Actualizar(IEnumerable<T> nuevo)
@@ -208,11 +212,13 @@ namespace PrestApp.Api.DataManagement.Generic
             }
             catch (SqlException s)
             {
-                return false;
+                n.Rollback();
+                throw s;
             }
             catch (Exception e)
             {
-                return false;
+                n.Rollback();
+                throw e.InnerException ?? e;
             }
         }
 
@@ -232,7 +238,7 @@ namespace PrestApp.Api.DataManagement.Generic
                 }
                 catch (Exception e)
                 {
-                    return false;
+                    throw e.InnerException ?? e;
                 }
             }
             return true;
@@ -270,8 +276,40 @@ namespace PrestApp.Api.DataManagement.Generic
                 }
                 catch (Exception e)
                 {
+                    n.Rollback();
+                    throw e.InnerException ?? e;
+                }
+            }
+        }
 
-                    return false;
+        public bool Eliminar(T id)
+        {
+            using (var n = dataContext.Database.BeginTransaction())
+            {
+                try
+                {
+                    var res = dbSet.Find(id);
+                    if (res != null)
+                    {
+                        dbSet.Remove(res);
+                        var save = dataContext.SaveChanges();
+                        n.Commit();
+                        return save > 0;
+                    }
+                    else
+                    {
+                        throw new Exception("Objeto no encontrado en base de datos");
+                    }
+                }
+                catch (SqlException s)
+                {
+                    n.Rollback();
+                    throw s;
+                }
+                catch (Exception e)
+                {
+                    n.Rollback();
+                    throw e.InnerException ?? e;
                 }
             }
         }
@@ -302,8 +340,8 @@ namespace PrestApp.Api.DataManagement.Generic
                 }
                 catch (Exception e)
                 {
-
-                    return false;
+                    n.Rollback();
+                    throw e.InnerException ?? e;
                 }
             }
         }
@@ -340,7 +378,8 @@ namespace PrestApp.Api.DataManagement.Generic
                 }
                 catch (Exception e)
                 {
-                    return false;
+                    n.Rollback();
+                    throw e.InnerException ?? e;
                 }
             }
         }
@@ -362,13 +401,11 @@ namespace PrestApp.Api.DataManagement.Generic
                 }
                 catch (SqlException s)
                 {
-                    tran.Rollback();
-                    return false;
+                    throw s;
                 }
                 catch (Exception e)
                 {
-
-                    return false;
+                    throw e.InnerException ?? e;
                 }
             }
         }
