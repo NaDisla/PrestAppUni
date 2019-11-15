@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Database.Models;
 using PrestApp.Api.DataManagement.Generic;
-using PrestApp.Clases;
 using System;
 using System.Collections.Generic;
 using System.Linq;

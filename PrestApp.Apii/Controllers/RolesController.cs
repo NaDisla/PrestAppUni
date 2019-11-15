@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Database.Models;
 using PrestApp.Api.DataManagement.Generic;
-using PrestApp.Clases;
 
 namespace PrestApp.Apii.Controllers
 {
