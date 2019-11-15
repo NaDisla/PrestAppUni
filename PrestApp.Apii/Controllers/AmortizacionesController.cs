@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrestApp.Clases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PrestApp.Api.DataManagement.Generic;
+using PrestApp.Api.DataManagement.Database.Models;
 
 namespace PrestApp.Api.Controllers
 {
