@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PrestApp.Api.DataManagement.Database;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,20 +11,20 @@ namespace PrestApp.Api.DataManagement.Generic
     public class CRUDModel<T> : ICRUDModel<T> where T : class
     {
         #region Config
-        //private NorthwindEntities dataContext = null;
+        private DB_PrestAppContext dataContext = null;
         private DbSet<T> dbSet = null;
 
-        //public BaseData()
-        //{
-        //    this.dataContext = new NorthwindEntities();
-        //    dbSet = dataContext.Set<T>();
-        //}
+        public CRUDModel()
+        {
+            this.dataContext = new DB_PrestAppContext();
+            dbSet = dataContext.Set<T>();
+        }
 
-        //public BaseData(NorthwindEntities _context)
-        //{
-        //    this.dataContext = _context;
-        //    dbSet = _context.Set<T>();
-        //}
+        public CRUDModel(DB_PrestAppContext _context)
+        {
+            this.dataContext = _context;
+            dbSet = _context.Set<T>();
+        }
 
         #endregion
 
@@ -147,7 +148,7 @@ namespace PrestApp.Api.DataManagement.Generic
                     dataContext.SaveChanges();
                     tran.Commit();
                     return null;
-//                    return res;
+                    //                    return res;
                 }
                 catch (Exception e)
                 {
@@ -172,12 +173,10 @@ namespace PrestApp.Api.DataManagement.Generic
             }
             catch (SqlException s)
             {
-                n.Rollback();
                 throw s;
             }
             catch (Exception e)
             {
-                n.Rollback();
                 throw e.InnerException ?? e;
             }
         }
@@ -191,12 +190,10 @@ namespace PrestApp.Api.DataManagement.Generic
             }
             catch (SqlException s)
             {
-                n.Rollback();
                 throw s;
             }
             catch (Exception e)
             {
-                n.Rollback();
                 throw e.InnerException ?? e;
             }
         }
@@ -212,12 +209,10 @@ namespace PrestApp.Api.DataManagement.Generic
             }
             catch (SqlException s)
             {
-                n.Rollback();
                 throw s;
             }
             catch (Exception e)
             {
-                n.Rollback();
                 throw e.InnerException ?? e;
             }
         }
@@ -413,7 +408,6 @@ namespace PrestApp.Api.DataManagement.Generic
         #endregion
 
         #endregion
-
     }
 }
 
