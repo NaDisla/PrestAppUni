@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PrestApp.Api.DataManagement.Database;
@@ -50,11 +51,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Insert/{id}")]
         [HttpGet]
-        public ObjectResult Insert(ClUsuarios Rol)
+        public ObjectResult Insert(ClUsuarios User)
         {
             try
             {
-                var Success = generic.Insertar(Rol);
+                var Success = generic.Insertar(User);
                 return Ok(Success);
             }
             catch (Exception e)
@@ -104,7 +105,8 @@ namespace PrestApp.Api.Controllers
             {
                 using (var tran = new DB_PrestAppContext())
                 {
-                    var success = tran.Set<ClUsuarios>().Select(x => x).Where(x => x.Usu_Nombre == User && x.Usu_Pass == Password).FirstOrDefault();
+                    byte[] Encrypted = Encoding.UTF8.GetBytes(Password);
+                    var success = tran.Set<ClUsuarios>().Select(x => x).Where(x => x.Usu_Nombre == User && x.Usu_Pass == Encrypted).FirstOrDefault();
                     if (success != null)
                     {
                         return Ok();

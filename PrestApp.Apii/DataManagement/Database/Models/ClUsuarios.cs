@@ -25,8 +25,6 @@ namespace PrestApp.Api.DataManagement.Database.Models
         public string Usu_Nombre { get; set; }
 
         [Required]
-        [MaxLength(30)]
-        [DataType(DataType.Password)]
-        public string Usu_Pass { get; set; }
+        public byte[] Usu_Pass { get; set; }
     }
 }
