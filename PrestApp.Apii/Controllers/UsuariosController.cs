@@ -19,7 +19,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
+                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
                 var roles = generic.Get();
                 return Ok(roles);
             }
@@ -36,7 +36,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
+                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
                 var roles = generic.Get(id);
                 return Ok(roles);
             }
@@ -49,11 +49,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Insert/{id}")]
         [HttpGet]
-        public ObjectResult Insert(ClUsuario Rol)
+        public ObjectResult Insert(ClUsuarios Rol)
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
+                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
                 var roles = generic.Insert(Rol);
                 return Ok(roles);
             }
@@ -66,11 +66,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Update")]
         [HttpGet]
-        public ObjectResult Update(ClUsuario Rol)
+        public ObjectResult Update(ClUsuarios Rol)
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
+                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
                 var roles = generic.Update(Rol);
                 return Ok(roles);
             }
@@ -83,11 +83,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("Delete/{id}")]
         [HttpGet]
-        public ObjectResult Delete(ClUsuario id)
+        public ObjectResult Delete(ClUsuarios id)
         {
             try
             {
-                IGeneric<ClUsuario> generic = new Generic<ClUsuario>();
+                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
                 var roles = generic.Delete(id);
                 return Ok(roles);
             }
