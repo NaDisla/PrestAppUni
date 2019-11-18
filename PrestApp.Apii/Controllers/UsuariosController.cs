@@ -22,8 +22,8 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var roles = generic.ObtenerTodos();
-                return Ok(roles);
+                var Users = generic.ObtenerTodos();
+                return Ok(Users);
             }
             catch (Exception e)
             {
@@ -38,8 +38,8 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var rol = generic.Obtener(id);
-                return Ok(rol);
+                var user = generic.Obtener(id);
+                return Ok(user);
             }
             catch (Exception e)
             {
