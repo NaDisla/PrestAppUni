@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PrestApp.Api.DataManagement.Database;
 using PrestApp.Api.DataManagement.Database.Models;
 using PrestApp.Api.DataManagement.Generic;
 
@@ -37,8 +38,8 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var roles = generic.Obtener(id);
-                return Ok(roles);
+                var rol = generic.Obtener(id);
+                return Ok(rol);
             }
             catch (Exception e)
             {
@@ -53,8 +54,8 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var roles = generic.Insertar(Rol);
-                return Ok(roles);
+                var Success = generic.Insertar(Rol);
+                return Ok(Success);
             }
             catch (Exception e)
             {
@@ -69,8 +70,8 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var roles = generic.Actualizar(Rol);
-                return Ok(roles);
+                var Success = generic.Actualizar(Rol);
+                return Ok(Success);
             }
             catch (Exception e)
             {
@@ -85,8 +86,34 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var roles = generic.Eliminar(id.Usu_ID);
-                return Ok(roles);
+                var Success = generic.Eliminar(id.Usu_ID);
+                return Ok(Success);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        [Route("Login")]
+        [HttpPost]
+        public OkResult Login(string User, string Password)
+        {
+            try
+            {
+                using (var tran = new DB_PrestAppContext())
+                {
+                    var success = tran.Set<ClUsuarios>().Select(x => x).Where(x => x.Usu_Nombre == User && x.Usu_Pass == Password).FirstOrDefault();
+                    if (success != null)
+                    {
+                        return Ok();
+                    }
+                    else
+                    {
+                        throw new Exception("Credenciales incorrectas.");
+                    }
+                }
             }
             catch (Exception e)
             {
