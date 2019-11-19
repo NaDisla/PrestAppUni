@@ -6,6 +6,7 @@ using System.Text;
 
 namespace PrestApp.Api.DataManagement.Database.Models
 {
+    [Table("Usuarios")]
     public class ClUsuarios
     {
         [Key]
@@ -24,7 +25,9 @@ namespace PrestApp.Api.DataManagement.Database.Models
         [MaxLength(30)]
         public string Usu_Nombre { get; set; }
 
-        [Required]
-        public byte[] Usu_Pass { get; set; }
+        public byte[] Usu_Clave { get; set; }
+
+        [NotMapped]
+        public string Clave { get; set; }
     }
 }

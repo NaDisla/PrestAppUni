@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 namespace PrestApp.Api.Controllers
 {
     [ApiController]
-    [Route("api/TitulosAcademicos")]
     public class TitulosAcademicosController : ControllerBase
     {
         private ICRUDModel<ClTitulosAcademicos> generic = new CRUDModel<ClTitulosAcademicos>();
 
-        [Route("Get")]
+        [Route("api/TitulosAcademicos/Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
@@ -30,7 +29,7 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/TitulosAcademicos/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
@@ -46,8 +45,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert")]
-        [HttpGet]
+        [Route("api/TitulosAcademicos/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClTitulosAcademicos tituloAcademico)
         {
             try
@@ -62,8 +61,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/TitulosAcademicos/Update")]
+        [HttpPut]
         public ObjectResult Update(ClTitulosAcademicos tituloAcademico)
         {
             try
@@ -78,8 +77,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete")]
-        [HttpGet]
+        [Route("api/TitulosAcademicos/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClTitulosAcademicos tituloAcademico)
         {
             try

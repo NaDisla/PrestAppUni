@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/Clientes")]
     [ApiController]
     public class ClientesController : ControllerBase
     {
         private ICRUDModel<ClClientes> generic = new CRUDModel<ClClientes>();
-        [Route("Get")]
+        [Route("api/Clientes/Get")]
         [HttpGet]
         public ObjectResult ListClients()
         {
@@ -30,7 +29,7 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Clientes/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
@@ -46,8 +45,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert/{id}")]
-        [HttpGet]
+        [Route("api/Clientes/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClClientes client)
         {
             try
@@ -62,8 +61,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/Clientes/Update")]
+        [HttpPut]
         public ObjectResult Update(ClClientes client)
         {
             try
@@ -78,13 +77,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete/{id}")]
-        [HttpGet]
+        [Route("api/Clientes/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClClientes id)
         {
             try
             {
-                var ok = generic.Eliminar(id.IDCliente);
+                var ok = generic.Eliminar(id.Cli_ID);
                 return Ok(ok);
             }
             catch (Exception e)

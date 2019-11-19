@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace PrestApp.Api.DataManagement.Database.Models
 {
+    [Table("Clientes")]
     public class ClClientes
     {
         private int idCliente;
 
         [Key]
-        public int IDCliente
+        public int Cli_ID
         {
             get { return idCliente; }
             set { idCliente = value; }
@@ -18,7 +20,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private int idTítuloAcdm;
 
-        public int IDTítuloAcdm
+        public int TitAcdm_ID
         {
             get { return idTítuloAcdm; }
             set { idTítuloAcdm = value; }
@@ -26,7 +28,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private int idOcupación;
 
-        public int IDOcupación
+        public int Ocu_ID
         {
             get { return idOcupación; }
             set { idOcupación = value; }
@@ -34,7 +36,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string nombres;
 
-        public string  Nombres
+        public string Cli_Nombres
         {
             get { return nombres; }
             set { nombres = value; }
@@ -42,7 +44,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string apellidos;
 
-        public string Apellidos
+        public string Cli_Apellidos
         {
             get { return apellidos; }
             set { apellidos = value; }
@@ -50,7 +52,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private char género;
 
-        public char Género
+        public char Cli_Genero
         {
             get { return género; }
             set { género = value; }
@@ -58,14 +60,14 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string cédula;
 
-        public string Cédula
+        public string Cli_Cédula
         {
             get { return cédula; }
             set { cédula = value; }
         }
         private string fechaNacimiento;
 
-        public string FechaNacimiento
+        public string Cli_FechaNacimiento
         {
             get { return string.Format("{0:dd-MM-yy}",fechaNacimiento); }
             set { fechaNacimiento = value; }
@@ -73,7 +75,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string telCasa;
 
-        public string TelCasa
+        public string Cli_TelCasa
         {
             get { return telCasa; }
             set { telCasa = value; }
@@ -81,7 +83,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string telCelular;
 
-        public string TelCelular
+        public string Cli_TelCelular
         {
             get { return telCelular; }
             set { telCelular = value; }
@@ -89,7 +91,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string estadoCivil;
 
-        public string EstadoCivil
+        public string Cli_EstadoCivil
         {
             get { return estadoCivil; }
             set { estadoCivil = value; }
@@ -97,7 +99,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private int dependientes;
 
-        public int Dependientes
+        public int Cli_Dependientes
         {
             get { return dependientes; }
             set { dependientes = value; }
@@ -105,7 +107,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private decimal ingresos;
 
-        public decimal Ingresos
+        public decimal Cli_Ingresos
         {
             get { return ingresos; }
             set { ingresos = value; }
@@ -113,7 +115,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string dirección;
 
-        public string Dirección
+        public string Cli_Dirección
         {
             get { return dirección; }
             set { dirección = value; }
@@ -121,7 +123,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string correo;
 
-        public string Correo
+        public string Cli_Correo
         {
             get { return correo; }
             set { correo = value; }

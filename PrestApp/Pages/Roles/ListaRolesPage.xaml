@@ -10,7 +10,7 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding IDRol}"
-                          Detail="{Binding Nombre}"/>
+                          Detail="{Binding Nombre}" TextColor="Black"/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

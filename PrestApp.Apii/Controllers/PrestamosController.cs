@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/Prestamos")]
     [ApiController]
     public class PrestamosController : ControllerBase
     {
         private ICRUDModel<ClPrestamos> generic = new CRUDModel<ClPrestamos>();
 
-        [Route("Get")]
+        [Route("api/Prestamos/Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
@@ -31,7 +30,7 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Prestamos/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
@@ -47,8 +46,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert")]
-        [HttpGet]
+        [Route("api/Prestamos/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClPrestamos client)
         {
             try
@@ -63,8 +62,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/Prestamos/Update")]
+        [HttpPut]
         public ObjectResult Update(ClPrestamos client)
         {
             try
@@ -79,8 +78,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete")]
-        [HttpGet]
+        [Route("api/Prestamos/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClPrestamos id)
         {
             try

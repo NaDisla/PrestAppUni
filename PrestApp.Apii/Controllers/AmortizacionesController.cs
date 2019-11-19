@@ -8,13 +8,12 @@ using PrestApp.Api.DataManagement.Database.Models;
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/Amortizaciones")]
     [ApiController]
     public class AmortizacionesController : ControllerBase
     {
         private ICRUDModel<ClAmortizaciones> generic = new CRUDModel<ClAmortizaciones>();
 
-        [Route("Get")]
+        [Route("api/Amortizaciones/Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
@@ -30,7 +29,7 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Amortizaciones/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
@@ -46,8 +45,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert")]
-        [HttpGet]
+        [Route("api/Amortizaciones/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClAmortizaciones pago)
         {
             try
@@ -62,8 +61,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/Amortizaciones/Update")]
+        [HttpPut]
         public ObjectResult Update(ClAmortizaciones pago)
         {
             try
@@ -78,8 +77,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete")]
-        [HttpGet]
+        [Route("api/Amortizaciones/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClAmortizaciones id)
         {
             try

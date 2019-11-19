@@ -9,13 +9,12 @@ using PrestApp.Api.DataManagement.Generic;
 
 namespace PrestApp.Apii.Controllers
 {
-    [Route("api/Roles")]
     [ApiController]
     public class RolesController : ControllerBase
     {
         private ICRUDModel<ClRoles> generic = new CRUDModel<ClRoles>();
 
-        [Route("Get")]
+        [Route("api/Roles/Get")]
         [HttpGet]
         public ObjectResult ListRoles()
         {
@@ -31,7 +30,7 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Roles/Get/{id}")]
         [HttpGet]
         public ObjectResult GetRole(int id)
         {
@@ -47,7 +46,7 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("Insert/{id}")]
+        [Route("api/RolesInsert/{id}")]
         [HttpGet]
         public ObjectResult Insert(ClRoles Rol)
         {
@@ -63,7 +62,7 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("Update")]
+        [Route("api/RolesUpdate")]
         [HttpGet]
         public ObjectResult Update(ClRoles Rol)
         {
@@ -79,7 +78,7 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("Delete/{id}")]
+        [Route("api/Roles/Delete/{id}")]
         [HttpGet]
         public ObjectResult Delete(ClRoles id)
         {

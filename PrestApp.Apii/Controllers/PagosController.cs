@@ -10,14 +10,13 @@ using PrestApp.Api.DataManagement.Generic;
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/Pagos")]
     [ApiController]
     public class PagosController : ControllerBase
     {
 
         ICRUDModel<ClPagos> generic = new CRUDModel<ClPagos>();
 
-        [Route("Get")]
+        [Route("api/Pagos/Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
@@ -33,7 +32,7 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Pagos/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
@@ -49,8 +48,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert")]
-        [HttpGet]
+        [Route("api/Pagos/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClPagos pago)
         {
             try
@@ -65,8 +64,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/Pagos/Update")]
+        [HttpPut]
         public ObjectResult Update(ClPagos pago)
         {
             try
@@ -81,8 +80,8 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete")]
-        [HttpGet]
+        [Route("api/Pagos/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClPagos id)
         {
             try
