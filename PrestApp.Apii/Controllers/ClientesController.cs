@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrestApp.Clases;
-using PrestApp.Generic;
+using PrestApp.Api.DataManagement.Database.Models;
+using PrestApp.Api.DataManagement.Generic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,18 +9,17 @@ using System.Threading.Tasks;
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/Clientes")]
     [ApiController]
     public class ClientesController : ControllerBase
     {
-        [Route("Get")]
+        private ICRUDModel<ClClientes> generic = new CRUDModel<ClClientes>();
+        [Route("api/Clientes/Get")]
         [HttpGet]
         public ObjectResult ListClients()
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Get();
+                var clients = generic.ObtenerTodos();
                 return Ok(clients);
             }
             catch (Exception e)
@@ -30,14 +29,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Clientes/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Get(id);
+                var clients = generic.Obtener(id);
                 return Ok(clients);
             }
             catch (Exception e)
@@ -47,14 +45,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert/{id}")]
-        [HttpGet]
+        [Route("api/Clientes/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClClientes client)
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Insert(client);
+                var clients = generic.Insertar(client);
                 return Ok(clients);
             }
             catch (Exception e)
@@ -64,14 +61,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/Clientes/Update")]
+        [HttpPut]
         public ObjectResult Update(ClClientes client)
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var clients = generic.Update(client);
+                var clients = generic.Actualizar(client);
                 return Ok(clients);
             }
             catch (Exception e)
@@ -81,14 +77,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete/{id}")]
-        [HttpGet]
+        [Route("api/Clientes/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClClientes id)
         {
             try
             {
-                IGeneric<ClClientes> generic = new Generic<ClClientes>();
-                var ok = generic.Delete(id);
+                var ok = generic.Eliminar(id.Cli_ID);
                 return Ok(ok);
             }
             catch (Exception e)

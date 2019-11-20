@@ -2,26 +2,33 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PrestApp.Clases;
-using PrestApp.Generic;
+using PrestApp.Api.DataManagement.Database;
+using PrestApp.Api.DataManagement.Database.Models;
+using PrestApp.Api.DataManagement.Generic;
 
 namespace PrestApp.Api.Controllers
 {
     [ApiController]
-    [Route("api/Usuarios")]
     public class UsuariosController : ControllerBase
     {
-        [Route("Get")]
+        private ICRUDModel<ClUsuarios> generic = new CRUDModel<ClUsuarios>();
+        private ICRUDModel<ClRoles> dataRol = new CRUDModel<ClRoles>();
+
+        [Route("api/Usuarios/Get")]
         [HttpGet]
         public ObjectResult ListUsers()
         {
             try
             {
-                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
-                var roles = generic.Get();
-                return Ok(roles);
+                var Users = generic.ObtenerTodos();
+                foreach (var item in Users)
+                {
+                    item.Rol = dataRol.Obtener(item.Rol_ID);
+                }
+                return Ok(Users);
             }
             catch (Exception e)
             {
@@ -30,15 +37,15 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Usuarios/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
             try
             {
-                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
-                var roles = generic.Get(id);
-                return Ok(roles);
+                var user = generic.Obtener(id);
+                user.Rol = dataRol.Obtener(user.Rol_ID);
+                return Ok(user);
             }
             catch (Exception e)
             {
@@ -47,15 +54,15 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert/{id}")]
-        [HttpGet]
-        public ObjectResult Insert(ClUsuarios Rol)
+        [Route("api/Usuarios/Insert")]
+        [HttpPost]
+        public ObjectResult Insert(ClUsuarios User)
         {
             try
             {
-                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
-                var roles = generic.Insert(Rol);
-                return Ok(roles);
+                User.Usu_Clave = Encoding.UTF8.GetBytes(User.Clave);
+                var Success = generic.Insertar(User);
+                return Ok(Success);
             }
             catch (Exception e)
             {
@@ -64,15 +71,15 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
-        public ObjectResult Update(ClUsuarios Rol)
+        [Route("api/Usuarios/Update")]
+        [HttpPut]
+        public ObjectResult Update(ClUsuarios User)
         {
             try
             {
-                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
-                var roles = generic.Update(Rol);
-                return Ok(roles);
+                User.Usu_Clave = Encoding.UTF8.GetBytes(User.Clave);
+                var Success = generic.Actualizar(User);
+                return Ok(Success);
             }
             catch (Exception e)
             {
@@ -81,15 +88,41 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete/{id}")]
-        [HttpGet]
+        [Route("api/Usuarios/Delete/{id}")]
+        [HttpDelete]
         public ObjectResult Delete(ClUsuarios id)
         {
             try
             {
-                IGeneric<ClUsuarios> generic = new Generic<ClUsuarios>();
-                var roles = generic.Delete(id);
-                return Ok(roles);
+                var Success = generic.Eliminar(id.Usu_ID);
+                return Ok(Success);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        [Route("api/Usuarios/Login")]
+        [HttpPost]
+        public OkResult Login(LoginViewModel login)
+        {
+            try
+            {
+                using (var tran = new DB_PrestAppContext())
+                {
+                    byte[] Encrypted = Encoding.UTF8.GetBytes(login.passwd);
+                    var success = tran.Set<ClUsuarios>().Select(x => x).Where(x => x.Usu_Nombre == login.user && x.Usu_Clave == Encrypted).FirstOrDefault();
+                    if (success != null)
+                    {
+                        return Ok();
+                    }
+                    else
+                    {
+                        throw new Exception("Credenciales incorrectas.");
+                    }
+                }
             }
             catch (Exception e)
             {

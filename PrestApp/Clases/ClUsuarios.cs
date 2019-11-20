@@ -10,6 +10,6 @@ namespace PrestApp.Clases
         public int Rol_ID { get; set; }
         public string Usu_NombreReal { get; set; }
         public string Usu_Nombre { get; set; }
-        public string Usu_Pass { get; set; }
+        public byte[] Usu_Pass { get; set; }
     }
 }

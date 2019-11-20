@@ -28,7 +28,7 @@ namespace PrestApp
             {
                 ClRoles nuevoRol = new ClRoles()
                 {
-                    Nombre = txtNombre.Text
+                    Rol_Nombre = txtNombre.Text
                 };
                 using (var conn = new SQLiteConnection(App._rutaBD))
                 {
