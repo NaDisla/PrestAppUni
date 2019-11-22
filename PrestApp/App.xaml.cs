@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PrestApp.Views.Usuarios;
 
 namespace PrestApp
 {
@@ -10,7 +11,7 @@ namespace PrestApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new GeneralLoginPage());
         }
         public static string _rutaBD;
         public App(string rutaBD)

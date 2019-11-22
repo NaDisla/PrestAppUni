@@ -35,26 +35,36 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\Clientes\RegistroClientesPage.xaml.cs">
+    <Compile Update="Views\Clientes\RegistroClientesPage.xaml.cs">
       <DependentUpon>RegistroClientesPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\GestorCobros\GestorCobroPage.xaml">
+    <EmbeddedResource Update="Views\GestorCobros\GestorCobroPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Roles\ListaRolesPage.xaml">
+    <EmbeddedResource Update="Views\Roles\ListaRolesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Prestamista\PrestamistaHomePage.xaml">
+    <EmbeddedResource Update="Views\Prestamista\PrestamistaHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Clientes\RegistroClientesPage.xaml">
+    <EmbeddedResource Update="Views\Clientes\RegistroClientesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Roles\RegistroRolesPage.xaml">
+    <EmbeddedResource Update="Views\Roles\RegistroRolesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Usuarios\GeneralLoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Usuarios\RegistroUsuarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Generic\" />
   </ItemGroup>
 </Project>
