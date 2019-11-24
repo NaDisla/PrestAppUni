@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PrestApp
+namespace PrestApp.Views.Administrador
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GestorCobroPage : ContentPage
+    public partial class AdministradorHomePage : ContentPage
     {
-        public GestorCobroPage()
+        public AdministradorHomePage()
         {
             InitializeComponent();
         }

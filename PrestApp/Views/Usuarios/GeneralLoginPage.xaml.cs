@@ -16,5 +16,10 @@ namespace PrestApp.Views.Usuarios
         {
             InitializeComponent();
         }
+
+        private void BtnRegistro_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegistroUsuarioPage());
+        }
     }
 }
