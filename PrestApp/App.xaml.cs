@@ -13,15 +13,6 @@ namespace PrestApp
 
             MainPage = new NavigationPage(new GeneralLoginPage());
         }
-        public static string _rutaBD;
-        public App(string rutaBD)
-        {
-            InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
-
-            _rutaBD = rutaBD;
-        }
 
         protected override void OnStart()
         {

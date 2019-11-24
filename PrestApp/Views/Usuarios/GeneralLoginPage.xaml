@@ -2,16 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:Custom="clr-namespace:PrestApp.Customs"
+             xmlns:ViewModel="clr-namespace:PrestApp.ViewModels"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.Views.Usuarios.GeneralLoginPage">
+             x:Class="PrestApp.Views.Usuarios.GeneralLoginPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <ViewModel:MainViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <Grid>
-            <Image Source="Fondo.png" Aspect="AspectFill"/>
+            <Image Source="Fondo.png" 
+                   Aspect="Fill"
+                   Margin="-11,-20,-11,-13"/>
             <ScrollView>
                 <StackLayout Margin="16, 0, 16, 0">
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -21,95 +32,102 @@
                         <Image Grid.Row="0"
                                Source="logoV5.png"
                                Margin="0, 25, 0, 0"
-                               HeightRequest="125"/>
+                               HeightRequest="115"/>
 
-                        <StackLayout Grid.Row="1"
+                        <Label Grid.Row="1" Text="¡Bienvenido!"
+                                           FontSize="17"
+                                           TextColor="White"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="CenterAndExpand"
+                                           Margin="0,30,0,-30"/>
+
+                        <StackLayout Grid.Row="2"
                                      Margin="0,46,0,0">
                             <StackLayout Orientation="Horizontal">
-                                <Entry Placeholder="Usuario" 
-                                       PlaceholderColor="White"
-                                       TextColor="White"
+                                <Custom:SimpleCustomEntry Placeholder="Usuario" 
+                                       PlaceholderColor="#052A48"
+                                       TextColor="#052A48"
                                        FontSize="16"
-                                       Margin="-17,0,-22,0"
+                                       Margin="17,0,22,0"
                                        HorizontalOptions="FillAndExpand"
-                                       MinimumWidthRequest="90"/>
-                                
+                                       FontAttributes="Bold"
+                                       Opacity="0.7"
+                                       x:Name="txtUsuarioLogin"/>
                             </StackLayout>
 
-                            <StackLayout Orientation="Horizontal">
-                                <Entry Placeholder="Contraseña" 
-                                       PlaceholderColor="White"
-                                       TextColor="White"
+                            <StackLayout Orientation="Horizontal"
+                                         Margin="0,19,0,0">
+                                <Custom:SimpleCustomEntry Placeholder="Contraseña" 
+                                       PlaceholderColor="#052A48"
+                                       TextColor="#052A48"
                                        FontSize="16"
-                                       Margin="-17,0,-22,0"
-                                       HorizontalOptions="FillAndExpand"/>
+                                       Margin="17,0,22,0"
+                                       HorizontalOptions="FillAndExpand"
+                                       FontAttributes="Bold"
+                                       IsPassword="True"
+                                       Opacity="0.7"
+                                       x:Name="txtClaveLogin"/>
                             </StackLayout>
+                        </StackLayout>
 
-                            <StackLayout Grid.Row="2"
+                        <StackLayout Grid.Row="3"
                                          Spacing="26"
-                                         Margin="0,24,0,0">
-                                <Label Text="Tipo de usuario"
-                                       TextColor="White"
-                                       Margin="5,-10,81,0"
-                                       FontSize="16"/>
-                            </StackLayout>
-
-                            <StackLayout Grid.Row="3">
-                                <Picker Title="Administrador" 
-                                        ItemsSource="{Binding RolesList}" 
-                                        SelectedItem="{Binding SelectedColorName, Mode=TwoWay}"
-                                        TextColor="White"/>
-                            </StackLayout>
-
-                            <StackLayout Grid.Row="4"
-                                         Spacing="26"
-                                         Margin="0, 34, 0, 0">
-                                <Button Text="Iniciar Sesión"
-                                        Margin="71,0,71,0"
+                                         Margin="0, 54, 0, 0">
+                            <Button Text="Iniciar Sesión"
+                                        Margin="81,0,81,0"
                                         FontSize="16"
                                         TextColor="White"
                                         BackgroundColor="#8DC63D"
-                                        FontAttributes="Bold"/>
+                                        FontAttributes="Bold"
+                                        BorderColor="#253D03"
+                                        BorderWidth="2"
+                                        CornerRadius="8"
+                                        x:Name="btnLogin"
+                                        Opacity="0.8"/>
 
-                                <StackLayout Orientation="Horizontal"
+                            <StackLayout Orientation="Horizontal"
                                              Margin="44,-1,44,0">
-                                    <Label Text="He olvidado mi contraseña"
+                                <Label Text="He olvidado mi contraseña"
                                            FontSize="16"
                                            TextColor="White"
                                            FontAttributes="Bold"
                                            HorizontalOptions="CenterAndExpand">
-                                        <Label.GestureRecognizers>
-                                            <TapGestureRecognizer 
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer 
                                                 Command = "{Binding OlvidarClave}">
-                                            </TapGestureRecognizer>
-                                        </Label.GestureRecognizers>
-                                    </Label>
-                                </StackLayout>
-                                
+                                        </TapGestureRecognizer>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </StackLayout>
 
-                            <StackLayout Grid.Row="5"
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="4"
                                          Spacing="26"
-                                         Margin="0, 34, 0, 0">
-                                <BoxView HorizontalOptions="FillAndExpand" 
+                                         Margin="0, 265, 0, 0">
+                            <BoxView HorizontalOptions="FillAndExpand" 
                                          HeightRequest="1"
                                          Color="White"/>
-                                <Label Text="¿No tienes una cuenta?"
+                            <Label Text="¿No tienes una cuenta?"
                                        FontAttributes="Bold"
                                        TextColor="White"
                                        FontSize="16"
-                                       Margin="0,-15,0,-15"/>
+                                       Margin="0,-1,0,-15"/>
 
-                                <StackLayout Orientation="Horizontal"
-                                             Margin="0,-29,0,0"
+                            <StackLayout Orientation="Horizontal"
+                                             Margin="0,-47,0,0"
                                              HorizontalOptions="End">
-                                    <Button Text="Regístrate"
+                                <Button Text="Regístrate"
+                                            Padding="20,0,20,0"
                                             BackgroundColor="#052A48"
                                             TextColor="White"
-                                            FontAttributes="Bold"/>
-                                </StackLayout>
+                                            FontAttributes="Bold"
+                                            BorderColor="White"
+                                            BorderWidth="2"
+                                            CornerRadius="8"
+                                            x:Name="btnRegistro"
+                                            Opacity="0.8"/>
                             </StackLayout>
-
                         </StackLayout>
                     </Grid>
                 </StackLayout>

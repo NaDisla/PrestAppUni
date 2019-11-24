@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PrestApp.Clases;
+using Rg.Plugins.Popup.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PrestApp
+namespace PrestApp.Views.Informations
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListaRolesPage : ContentPage
+    public partial class ResetClaveInformationPage : PopupPage
     {
-        List<ClRoles> listaRoles;
-        public ListaRolesPage()
+        public ResetClaveInformationPage()
         {
             InitializeComponent();
-            listaRoles = new List<ClRoles>();
-        }
-        protected override void OnAppearing()
-        {
-
         }
     }
 }

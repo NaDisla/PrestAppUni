@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PrestApp.Clases;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PrestApp
+namespace PrestApp.Views.Usuarios
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListaRolesPage : ContentPage
+    public partial class OlvidarClavePage : ContentPage
     {
-        List<ClRoles> listaRoles;
-        public ListaRolesPage()
+        public OlvidarClavePage()
         {
             InitializeComponent();
-            listaRoles = new List<ClRoles>();
-        }
-        protected override void OnAppearing()
-        {
-
         }
     }
 }

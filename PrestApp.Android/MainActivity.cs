@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Android.App;
 using Android.Content.PM;
@@ -7,27 +7,26 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.IO;
+using Lottie.Forms.Droid;
 
 namespace PrestApp.Droid
 {
     [Activity(Label = "PrestApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public partial class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            string nombreArchivo = "BD_PrestApp.sqlite";
-            string rutaCarpeta = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            string rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
 
-            LoadApplication(new App(rutaCompleta));
+            LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
