@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PrestApp.Views.Prestamista;
 
 namespace PrestApp.Views.Usuarios
 {
@@ -20,6 +20,11 @@ namespace PrestApp.Views.Usuarios
         private void BtnRegistro_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RegistroUsuarioPage());
+        }
+
+        private void BtnLogin_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HomePrestamistaPage());
         }
     }
 }

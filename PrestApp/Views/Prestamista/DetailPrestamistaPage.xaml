@@ -4,12 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.PrestamistaHomePage">
+             x:Class="PrestApp.Views.Prestamista.DetailPrestamistaPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
-            <Frame BackgroundColor="Honeydew" HeightRequest="10" HasShadow="True">
-                <Label Text="PrestApp" TextColor="#499438" FontSize="15" FontAttributes="Bold"></Label>
-            </Frame>
+        <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

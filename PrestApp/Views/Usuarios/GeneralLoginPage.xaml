@@ -19,7 +19,7 @@
                    Aspect="Fill"
                    Margin="-11,-20,-11,-13"/>
             <ScrollView>
-                <StackLayout Margin="16, 0, 16, 0">
+            <StackLayout Margin="16, 0, 16, 0">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -87,6 +87,7 @@
                                         BorderWidth="2"
                                         CornerRadius="8"
                                         x:Name="btnLogin"
+                                        Clicked="BtnLogin_Clicked" 
                                         Opacity="0.8"/>
 
                             <StackLayout Orientation="Horizontal"
@@ -94,7 +95,7 @@
                                 <Label Text="He olvidado mi contraseña"
                                            FontSize="16"
                                            TextColor="White"
-                                           FontAttributes="Bold"
+                                           FontAttributes="Bold" 
                                            HorizontalOptions="CenterAndExpand">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer 

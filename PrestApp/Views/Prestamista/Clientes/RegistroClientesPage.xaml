@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Custom="clr-namespace:PrestApp.Customs"
+             xmlns:ViewModel="clr-namespace:PrestApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="PrestApp.RegistroClientes"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout BackgroundColor="#379FC0" Opacity="0.8"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"
+                               Source="logoV6.png"
+                               Margin="0, 25, 0, 0"
+                               WidthRequest="265"/>
+
+                <StackLayout Grid.Row="1"
+                                         Spacing="26"
+                                         Margin="0,24,0,16">
+                    <Label Text="Nuevo Cliente"
+                                       TextColor="#052A48"
+                                       HorizontalOptions="CenterAndExpand"
+                                       FontSize="18"
+                                       FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2"
+                             Margin="0,25,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Cédula"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               Margin="17,0,22,0"
+                               WidthRequest="120"
+                               Opacity="0.7"
+                               x:Name="txtCedula"
+                               HorizontalOptions="Start"/>
+
+                        <Custom:SimpleCustomEntry Placeholder="Título Académico"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               Opacity="0.7"
+                               x:Name="cmbTituloAcdm"
+                               HorizontalOptions="End"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!--StackLayout Grid.Row="3"
+                             Margin="0,12,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+
+                    </StackLayout>
+                <-->
+
+                <StackLayout Grid.Row="3"
+                             Margin="0,12,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Contraseña"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               x:Name="txtClaveRegistro"
+                               Opacity="0.7"
+                               Margin="17,0,22,0"
+                               IsPassword="True"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="4"
+                             Margin="0,12,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Confirmar contraseña"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               Margin="17,0,22,0"
+                               Opacity="0.7"
+                               x:Name="txtConfirmarClave"
+                               IsPassword="True"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="5"
+                                         Spacing="26"
+                                         Margin="0, 94, 0, 0">
+                    <Button Text="Registrarme"
+                                        HorizontalOptions="Center"
+                                        Padding="20,0,20,0"
+                                        FontSize="16"
+                                        TextColor="White"
+                                        BackgroundColor="#052A48"
+                                        FontAttributes="Bold"
+                                        BorderColor="White"
+                                        BorderWidth="2"
+                                        CornerRadius="8"
+                                        x:Name="btnLogin"
+                                        Opacity="0.8"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

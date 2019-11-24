@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PrestApp
+namespace PrestApp.Views.Prestamista.Pagos
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PrestamistaHomePage : ContentPage
+    public partial class HomePagosPage : ContentPage
     {
-        public PrestamistaHomePage()
+        public HomePagosPage()
         {
             InitializeComponent();
         }
