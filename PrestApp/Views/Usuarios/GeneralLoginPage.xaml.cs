@@ -24,7 +24,7 @@ namespace PrestApp.Views.Usuarios
 
         private void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePrestamistaPage());
+            Navigation.PushAsync(new MasterPrestamistaPage());
         }
     }
 }
