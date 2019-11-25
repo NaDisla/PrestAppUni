@@ -1,25 +1,19 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PrestApp.Views.Usuarios;
 
 namespace PrestApp
 {
     public partial class App : Application
     {
+        public static MasterDetailPage MasterD { get; set; }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
-        }
-        public static string _rutaBD;
-        public App(string rutaBD)
-        {
-            InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
-
-            _rutaBD = rutaBD;
+            MainPage = new NavigationPage(new GeneralLoginPage());
         }
 
         protected override void OnStart()

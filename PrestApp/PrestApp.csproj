@@ -16,18 +16,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Generic\**" />
-    <EmbeddedResource Remove="Generic\**" />
-    <None Remove="Generic\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
-    <PackageReference Include="sqlite" Version="3.13.0" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.7.302-beta" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Rg.Plugins.Popup.Gmo" Version="1.1.5.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.936621-pre1" />
+    <PackageReference Include="UXDivers.Effects" Version="0.6.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991210-pre2" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
 
@@ -41,25 +36,58 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\Clientes\RegistroClientesPage.xaml.cs">
+    <Compile Update="Views\Prestamista\Clientes\RegistroClientesPage.xaml.cs">
       <DependentUpon>RegistroClientesPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\GestorCobros\GestorCobroPage.xaml">
+    <EmbeddedResource Update="Views\Administrador\AdministradorHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Roles\ListaRolesPage.xaml">
+    <EmbeddedResource Update="Views\Informations\RegistroInformationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Prestamista\PrestamistaHomePage.xaml">
+    <EmbeddedResource Update="Views\Informations\ResetClaveInformationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Clientes\RegistroClientesPage.xaml">
+    <EmbeddedResource Update="Views\Prestamista\Clientes\HomeClientesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Roles\RegistroRolesPage.xaml">
+    <EmbeddedResource Update="Views\Prestamista\DetailPrestamistaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Prestamista\HomePrestamistaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Prestamista\MasterPrestamistaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Prestamista\Pagos\HomePagosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Prestamista\Préstamos\HomePrestamosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Roles\ListaRolesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Prestamista\Clientes\RegistroClientesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Roles\RegistroRolesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Usuarios\GeneralLoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Usuarios\OlvidarClavePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Usuarios\RegistroUsuarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Usuarios\ResetClavePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
