@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrestApp.Clases;
-using PrestApp.Generic;
+using PrestApp.Api.DataManagement.Database.Models;
+using PrestApp.Api.DataManagement.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/ModalidadesDePago")]
     [ApiController]
     public class ModalidadesPagoController : ControllerBase
     {
-        [Route("Get")]
+        ICRUDModel<ClModalidadesDePago> generic = new CRUDModel<ClModalidadesDePago>();
+
+        [Route("api/ModalidadesDePago/Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var pagos = generic.Get();
+                var pagos = generic.ObtenerTodos();
                 return Ok(pagos);
             }
             catch (Exception e)
@@ -29,14 +29,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/ModalidadesDePago/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var pago = generic.Get(id);
+                var pago = generic.Obtener(id);
                 return Ok(pago);
             }
             catch (Exception e)
@@ -46,14 +45,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert")]
-        [HttpGet]
+        [Route("api/ModalidadesDePago/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClModalidadesDePago pago)
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var pagos = generic.Insert(pago);
+                var pagos = generic.Insertar(pago);
                 return Ok(pagos);
             }
             catch (Exception e)
@@ -63,14 +61,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/ModalidadesDePago/Update")]
+        [HttpPut]
         public ObjectResult Update(ClModalidadesDePago pago)
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var prestamo = generic.Update(pago);
+                var prestamo = generic.Actualizar(pago);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -80,14 +77,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete")]
-        [HttpGet]
+        [Route("api/ModalidadesDePago/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClModalidadesDePago id)
         {
             try
             {
-                IGeneric<ClModalidadesDePago> generic = new Generic<ClModalidadesDePago>();
-                var ok = generic.Delete(id);
+                var ok = generic.Eliminar(id.ModPag_ID);
                 return Ok(ok);
             }
             catch (Exception e)

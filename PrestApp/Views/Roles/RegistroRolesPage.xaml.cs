@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using PrestApp.Clases;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PrestApp.Views.Roles;
 
-namespace PrestApp
+namespace PrestApp.Views.Roles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistroRolesPage : ContentPage
@@ -19,6 +20,7 @@ namespace PrestApp
 
         private void BtnRegistroRol_Clicked(object sender, EventArgs e)
         {
+            
         }
 
         private void BtnMostrarRoles_Clicked(object sender, EventArgs e)

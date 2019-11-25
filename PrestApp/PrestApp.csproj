@@ -16,13 +16,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Generic\**" />
-    <EmbeddedResource Remove="Generic\**" />
-    <None Remove="Generic\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="3.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />

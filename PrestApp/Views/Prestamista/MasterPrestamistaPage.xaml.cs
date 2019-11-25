@@ -8,6 +8,7 @@ using Xamarin.Forms.Xaml;
 using PrestApp.Views.Prestamista.Préstamos;
 using PrestApp.Views.Prestamista.Clientes;
 using PrestApp.Views.Prestamista.Pagos;
+using PrestApp.Views.Roles;
 
 namespace PrestApp.Views.Prestamista
 {
@@ -35,6 +36,12 @@ namespace PrestApp.Views.Prestamista
         {
             App.MasterD.IsPresented = false;
             await App.MasterD.Detail.Navigation.PushAsync(new HomeClientesPage());
+        }
+
+        private async void BtnPruebaRoles_Clicked(object sender, EventArgs e)
+        {
+            App.MasterD.IsPresented = false;
+            await App.MasterD.Detail.Navigation.PushAsync(new ListaRolesPage());
         }
     }
 }

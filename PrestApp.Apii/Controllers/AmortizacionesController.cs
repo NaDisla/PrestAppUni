@@ -1,25 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrestApp.Clases;
-using PrestApp.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PrestApp.Api.DataManagement.Generic;
+using PrestApp.Api.DataManagement.Database.Models;
 
 namespace PrestApp.Api.Controllers
 {
-    [Route("api/Amortizaciones")]
     [ApiController]
     public class AmortizacionesController : ControllerBase
     {
-        [Route("Get")]
+        private ICRUDModel<ClAmortizaciones> generic = new CRUDModel<ClAmortizaciones>();
+
+        [Route("api/Amortizaciones/Get")]
         [HttpGet]
         public ObjectResult ListaPrestamos()
         {
             try
             {
-                IGeneric<ClAmortizaciones> generic = new Generic<ClAmortizaciones>();
-                var pagos = generic.Get();
+                var pagos = generic.ObtenerTodos();
                 return Ok(pagos);
             }
             catch (Exception e)
@@ -29,14 +29,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Get/{id}")]
+        [Route("api/Amortizaciones/Get/{id}")]
         [HttpGet]
         public ObjectResult GetUser(int id)
         {
             try
             {
-                IGeneric<ClAmortizaciones> generic = new Generic<ClAmortizaciones>();
-                var pago = generic.Get(id);
+                var pago = generic.Obtener(id);
                 return Ok(pago);
             }
             catch (Exception e)
@@ -46,14 +45,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Insert")]
-        [HttpGet]
+        [Route("api/Amortizaciones/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClAmortizaciones pago)
         {
             try
             {
-                IGeneric<ClAmortizaciones> generic = new Generic<ClAmortizaciones>();
-                var pagos = generic.Insert(pago);
+                var pagos = generic.Insertar(pago);
                 return Ok(pagos);
             }
             catch (Exception e)
@@ -63,14 +61,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Update")]
-        [HttpGet]
+        [Route("api/Amortizaciones/Update")]
+        [HttpPut]
         public ObjectResult Update(ClAmortizaciones pago)
         {
             try
             {
-                IGeneric<ClAmortizaciones> generic = new Generic<ClAmortizaciones>();
-                var prestamo = generic.Update(pago);
+                var prestamo = generic.Actualizar(pago);
                 return Ok(prestamo);
             }
             catch (Exception e)
@@ -80,14 +77,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("Delete")]
-        [HttpGet]
+        [Route("api/Amortizaciones/Delete")]
+        [HttpDelete]
         public ObjectResult Delete(ClAmortizaciones id)
         {
             try
             {
-                IGeneric<ClAmortizaciones> generic = new Generic<ClAmortizaciones>();
-                var ok = generic.Delete(id);
+                var ok = generic.Eliminar(id.Amort_ID);
                 return Ok(ok);
             }
             catch (Exception e)

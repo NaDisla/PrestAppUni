@@ -40,6 +40,13 @@
                         BackgroundColor="White"
                         x:Name="btnClientes"
                         Clicked="BtnClientes_Clicked"/>
+
+                    <Button Text="Prueba de Roles :)"
+                        HorizontalOptions="Start"
+                        Padding="30,0,30,0"
+                        BackgroundColor="White"
+                        x:Name="btnPruebaRoles"
+                        Clicked="BtnPruebaRoles_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </Grid>

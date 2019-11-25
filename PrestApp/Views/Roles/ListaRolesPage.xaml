@@ -4,13 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.ListaRolesPage">
+             x:Class="PrestApp.Views.Roles.ListaRolesPage">
 
     <ListView x:Name="rolesListView">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding IDRol}"
-                          Detail="{Binding Nombre}"/>
+                          Detail="{Binding Nombre}" TextColor="Black"/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
