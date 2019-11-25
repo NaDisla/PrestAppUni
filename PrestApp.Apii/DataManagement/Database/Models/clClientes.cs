@@ -60,7 +60,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string cédula;
 
-        public string Cli_Cédula
+        public string Cli_Cedula
         {
             get { return cédula; }
             set { cédula = value; }
@@ -115,7 +115,7 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         private string dirección;
 
-        public string Cli_Dirección
+        public string Cli_Direccion
         {
             get { return dirección; }
             set { dirección = value; }
