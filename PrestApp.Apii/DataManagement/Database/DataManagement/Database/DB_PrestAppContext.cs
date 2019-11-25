@@ -27,11 +27,11 @@ namespace PrestApp.Api.DataManagement.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {}
 
-        public DbSet<ClRoles> clRoles { get; set; }
+        public DbSet<ClRoles> ClRoles { get; set; }
         public DbSet<ClAmortizaciones> ClAmortizaciones { get; set; }
         public DbSet<ClUsuarios> ClUsuarios { get; set; }
         public DbSet<ClClientes> ClClientes { get; set; }
-        public DbSet<ClModalidadesDePago> clModalidadesDePagos { get; set; }
+        public DbSet<ClModalidadesDePago> ClModalidadesDePagos { get; set; }
         public DbSet<ClOcupaciones> ClOcupaciones { get; set; }
         public DbSet<ClPagos> ClPagos { get; set; }
         public DbSet<ClPrestamos> ClPrestamos { get; set; }

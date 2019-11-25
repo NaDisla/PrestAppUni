@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PrestApp.Views.Prestamista.Clientes.HomeClientesPage"
+             xmlns:Custom="clr-namespace:PrestApp.Customs"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout BackgroundColor="#E9F4F8" Opacity="0.8"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"
+                               Source="logoV6.png"
+                               Margin="0, 25, 0, 0"
+                               WidthRequest="125"/>
+
+                <StackLayout Grid.Row="1"
+                                         Spacing="26"
+                                         Margin="0,24,0,16">
+                    <Label Text="Lista de Clientes"
+                                       TextColor="#052A48"
+                                       HorizontalOptions="CenterAndExpand"
+                                       FontSize="18"
+                                       FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2"
+                             Margin="0,25,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Cliente"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               Margin="17,0,22,0"
+                               Opacity="0.7"
+                               x:Name="txtNombreRealUsuario"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3"
+                                         Spacing="26"
+                                         Margin="0, 94, 0, 0">
+                    <Button Text="Agregar cliente"
+                                        HorizontalOptions="Center"
+                                        Padding="20,0,20,0"
+                                        FontSize="16"
+                                        TextColor="White"
+                                        BackgroundColor="#052A48"
+                                        FontAttributes="Bold"
+                                        BorderColor="White"
+                                        BorderWidth="2"
+                                        CornerRadius="8"
+                                        x:Name="btnLogin"
+                                        Opacity="0.8"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PrestApp.Views.Prestamista.MasterPrestamistaPage"
+             Title="Master">
+    <StackLayout Orientation="Vertical" BackgroundColor="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Source="logoV5.png" 
+               VerticalOptions="Center" 
+               HeightRequest="115"
+               Margin="0, 35, 0, 20"/>
+
+            <StackLayout Grid.Row="1" Spacing="5">
+                <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                    <Button Text="Préstamos"
+                        HorizontalOptions="Start"
+                        Padding="30,0,30,0"
+                        BackgroundColor="White"
+                        x:Name="btnPrestamos"
+                        Clicked="BtnPrestamos_Clicked"/>
+                    
+                    <Button Text="Pagos"
+                        HorizontalOptions="Start"
+                        Padding="30,0,30,0"
+                        BackgroundColor="White"
+                        x:Name="btnPagos"
+                        Clicked="BtnPagos_Clicked"/>
+                    
+                    <Button Text="Clientes"
+                        HorizontalOptions="Start"
+                        Padding="30,0,30,0"
+                        BackgroundColor="White"
+                        x:Name="btnClientes"
+                        Clicked="BtnClientes_Clicked"/>
+
+                    <Button Text="Prueba de Roles :)"
+                        HorizontalOptions="Start"
+                        Padding="30,0,30,0"
+                        BackgroundColor="White"
+                        x:Name="btnPruebaRoles"
+                        Clicked="BtnPruebaRoles_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

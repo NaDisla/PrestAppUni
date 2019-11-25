@@ -11,8 +11,12 @@ namespace PrestApp.Api.DataManagement.Generic
     public class CRUDModel<T> : ICRUDModel<T> where T : class
     {
         #region Config
+#pragma warning disable IDE0044 // Add readonly modifier
         private DB_PrestAppContext dataContext = null;
+#pragma warning restore IDE0044 // Add readonly modifier
+#pragma warning disable IDE0044 // Add readonly modifier
         private DbSet<T> dbSet = null;
+#pragma warning restore IDE0044 // Add readonly modifier
 
         public CRUDModel()
         {
