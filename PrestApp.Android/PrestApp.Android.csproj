@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\RendererDroidViewCell.cs" />
     <Compile Include="Renderers\SimpleCustomButtonRendererDroid.cs" />
     <Compile Include="Renderers\SimpleCustomEntryRendererDroid.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

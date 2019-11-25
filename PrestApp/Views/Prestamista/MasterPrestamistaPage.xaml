@@ -5,10 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="PrestApp.Views.Prestamista.MasterPrestamistaPage"
-             Title="Master">
+             xmlns:Custom="clr-namespace:PrestApp.Customs"
+             NavigationPage.HasNavigationBar="False">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
-            <Grid BackgroundColor="Transparent">
+            <Grid BackgroundColor="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
                     <RowDefinition Height="*" />
@@ -19,13 +20,14 @@
                                  VerticalOptions="CenterAndExpand">
                         <Image Source="logoV5.png" 
                                Aspect="AspectFill" 
-                               WidthRequest="85" 
-                               HeightRequest="85" />
+                               WidthRequest="145" 
+                               HeightRequest="125" />
                     </StackLayout>
                 </Grid>
-                <StackLayout Margin="20,20,20,0" Grid.Row="1" Spacing="15">
-                    <ListView x:Name="navigationDrawerList" 
-                              RowHeight="60" 
+                <StackLayout Margin="10,20,10,0" Grid.Row="1" Spacing="15">
+                    <ListView x:Name="navigationDrawerList"
+                              WidthRequest="120"
+                              RowHeight="60"
                               SeparatorVisibility="None" 
                               BackgroundColor="White" 
                               ItemSelected="NavigationDrawerList_ItemSelected">
@@ -35,7 +37,7 @@
                                     <!-- Main design for our menu items -->
                                     <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
                                         <Image Source="{Binding Icon}" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" />
-                                        <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="Black" />
+                                        <Label Text="{Binding Title}" FontSize="17" VerticalOptions="Center" TextColor="#052A48" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
