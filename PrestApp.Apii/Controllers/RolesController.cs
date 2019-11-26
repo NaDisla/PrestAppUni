@@ -46,8 +46,8 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("api/RolesInsert/{id}")]
-        [HttpGet]
+        [Route("api/Roles/Insert")]
+        [HttpPost]
         public ObjectResult Insert(ClRoles Rol)
         {
             try
@@ -62,8 +62,8 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("api/RolesUpdate")]
-        [HttpGet]
+        [Route("api/Roles/Update")]
+        [HttpPut]
         public ObjectResult Update(ClRoles Rol)
         {
             try
@@ -79,12 +79,12 @@ namespace PrestApp.Apii.Controllers
         }
 
         [Route("api/Roles/Delete/{id}")]
-        [HttpGet]
-        public ObjectResult Delete(ClRoles id)
+        [HttpDelete]
+        public ObjectResult Delete(int id)
         {
             try
             {
-                var roles = generic.Eliminar(id.IDRol);
+                var roles = generic.Eliminar(id);
                 return Ok(roles);
             }
             catch (Exception e)

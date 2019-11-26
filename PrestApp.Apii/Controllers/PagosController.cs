@@ -92,13 +92,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("api/Pagos/Delete")]
+        [Route("api/Pagos/Delete/{id}")]
         [HttpDelete]
-        public ObjectResult Delete(ClPagos id)
+        public ObjectResult Delete(int id)
         {
             try
             {
-                var ok = generic.Eliminar(id.Pag_ID);
+                var ok = generic.Eliminar(id);
                 return Ok(ok);
             }
             catch (Exception e)

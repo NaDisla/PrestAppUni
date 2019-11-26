@@ -90,11 +90,11 @@ namespace PrestApp.Api.Controllers
 
         [Route("api/Usuarios/Delete/{id}")]
         [HttpDelete]
-        public ObjectResult Delete(ClUsuarios id)
+        public ObjectResult Delete(int id)
         {
             try
             {
-                var Success = generic.Eliminar(id.Usu_ID);
+                var Success = generic.Eliminar(id);
                 return Ok(Success);
             }
             catch (Exception e)
