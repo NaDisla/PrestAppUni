@@ -56,6 +56,13 @@ namespace PrestApp.Views.Prestamista
                 TargetType = typeof(HomeClientesPage)
             };
             ListadoMenu.Add(pag4);
+            MasterPrestamistaItem pag5 = new MasterPrestamistaItem()
+            {
+                Title = "Prueba de Roles",
+                Icon = "clientes.png",
+                TargetType = typeof(ListaRolesPage)
+            };
+            ListadoMenu.Add(pag5);
             this.navigationDrawerList.ItemsSource = ListadoMenu;
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePrestamistaPage)));
             this.navigationDrawerList.ItemSelected += NavigationDrawerList_ItemSelected;
