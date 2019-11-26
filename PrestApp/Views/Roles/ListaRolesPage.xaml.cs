@@ -25,7 +25,7 @@ namespace PrestApp.Views.Roles
         }
         protected override async void OnAppearing()
         {
-            var url = new Uri("http://localhost:44381/");
+            var url = new Uri("https://192.168.250.94:44330/");
             var roles = new List<ClRoles>();
 
             client.BaseAddress = url;
