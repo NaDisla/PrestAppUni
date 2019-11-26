@@ -25,6 +25,8 @@ namespace PrestApp.Api.DataManagement.Database.Models
             get { return idTítuloAcdm; }
             set { idTítuloAcdm = value; }
         }
+        [ForeignKey("TitAcdm_ID")]
+        public ClTitulosAcademicos TituloAcademico { get; set; }
 
         private int idOcupación;
 
@@ -33,6 +35,9 @@ namespace PrestApp.Api.DataManagement.Database.Models
             get { return idOcupación; }
             set { idOcupación = value; }
         }
+
+        [ForeignKey("Ocu_ID")]
+        public ClOcupaciones Ocupacion { get; set; }
 
         private string nombres;
 
@@ -65,11 +70,11 @@ namespace PrestApp.Api.DataManagement.Database.Models
             get { return cédula; }
             set { cédula = value; }
         }
-        private string fechaNacimiento;
+        private DateTime fechaNacimiento;
 
-        public string Cli_FechaNacimiento
+        public DateTime Cli_FechaNacimiento
         {
-            get { return string.Format("{0:dd-MM-yy}",fechaNacimiento); }
+            get { return fechaNacimiento; }
             set { fechaNacimiento = value; }
         }
 
@@ -97,9 +102,9 @@ namespace PrestApp.Api.DataManagement.Database.Models
             set { estadoCivil = value; }
         }
 
-        private int dependientes;
+        private byte dependientes;
 
-        public int Cli_Dependientes
+        public byte Cli_Dependientes
         {
             get { return dependientes; }
             set { dependientes = value; }

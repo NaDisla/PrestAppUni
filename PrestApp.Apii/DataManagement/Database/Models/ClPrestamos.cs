@@ -16,11 +16,11 @@ namespace PrestApp.Api.DataManagement.Database.Models
         [ForeignKey("Cli_ID")]
         public ClClientes Cliente { get; set; }
 
-        public double Prest_Monto { get; set; }
+        public decimal Prest_Monto { get; set; }
 
-        public double Prest_Interes { get; set; }
+        public decimal Prest_Interes { get; set; }
 
-        public int Prest_Cuotas { get; set; }
+        public byte Prest_Cuotas { get; set; }
 
         public DateTime Prest_FechaCreacion { get; set; }
 
