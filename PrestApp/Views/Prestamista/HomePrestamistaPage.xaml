@@ -8,9 +8,12 @@
              xmlns:local="clr-namespace:PrestApp">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Prueba"
+            <Label Text="Ésta será la página de inicio del prestamista"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                 FontSize="Medium"
+                 FontAttributes="Bold"
+                 TextColor="#052A48"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
