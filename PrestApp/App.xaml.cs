@@ -2,11 +2,14 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PrestApp.Views.Usuarios;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace PrestApp
 {
     public partial class App : Application
     {
+        public static MobileServiceClient client = new MobileServiceClient("https://prestapp.azurewebsites.net");
+
         public static MasterDetailPage MasterD { get; set; }
 
         public App()

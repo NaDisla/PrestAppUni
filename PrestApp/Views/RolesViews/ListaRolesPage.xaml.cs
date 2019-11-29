@@ -10,26 +10,31 @@ using System.Net.Http;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
-namespace PrestApp.Views.Roles
+namespace PrestApp.Views.RolesViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaRolesPage : ContentPage
     {
-        private const string Url = "http://localhost:8080/";
-        private readonly HttpClient client = new HttpClient();
-        private ObservableCollection<ClRoles> _roles;
+        List<Roles> listaRoles;
+        //private const string Url = "";
+        //private readonly HttpClient client = new HttpClient();
+        //private ObservableCollection<ClRoles> _roles;
 
         public ListaRolesPage()
         {
             InitializeComponent();
+            listaRoles = new List<Roles>();
             //_roles = new ObservableCollection<ClRoles>();
         }
         protected override async void OnAppearing()
         {
-            string content = await client.GetStringAsync(Url);
-            List<ClRoles> roles = JsonConvert.DeserializeObject<List<ClRoles>>(content);
-            _roles = new ObservableCollection<ClRoles>(roles);
-            rolesListView.ItemsSource = _roles;
+            listaRoles = await App.client.GetTable<Roles>().ToListAsync();
+            rolesListView.ItemsSource = listaRoles;
+
+            /*string content = await client.GetStringAsync(Url);
+            List<Roles> roles = JsonConvert.DeserializeObject<List<Roles>>(content);
+            listaRoles = new ObservableCollection<Roles>(roles);
+            rolesListView.ItemsSource = listaRoles;*/
 
             //var url = new Uri("");
             //var roles = new List<ClRoles>();

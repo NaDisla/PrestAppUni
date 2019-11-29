@@ -10,8 +10,8 @@ using PrestApp.Views.Prestamista.Clientes;
 using PrestApp.Views.Prestamista.Pagos;
 using PrestApp.Views.Prestamista.MenuItems;
 using PrestApp.Views.Prestamista;
-using PrestApp.Views.Roles;
-
+using PrestApp.Views.RolesViews;
+using PrestApp.Clases;
 namespace PrestApp.Views.Prestamista
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

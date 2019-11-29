@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="PrestApp.Views.Prestamista.HomePrestamistaPage"
-             xmlns:local="clr-namespace:PrestApp">
+             xmlns:local="clr-namespace:PrestApp"
+             Title="Dashboard - Prestamista">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Ésta será la página de inicio del prestamista"

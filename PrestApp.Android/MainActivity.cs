@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.IO;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace PrestApp.Droid
 {
@@ -23,6 +24,7 @@ namespace PrestApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CurrentPlatform.Init();
 
 
             LoadApplication(new App());
