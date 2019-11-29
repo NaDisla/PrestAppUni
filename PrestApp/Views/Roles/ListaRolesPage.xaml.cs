@@ -15,6 +15,7 @@ namespace PrestApp.Views.Roles
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaRolesPage : ContentPage
     {
+        private const string Url = "http://localhost:8080/";
         private readonly HttpClient client = new HttpClient();
         private ObservableCollection<ClRoles> _roles;
 
