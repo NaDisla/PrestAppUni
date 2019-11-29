@@ -1,11 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.Views.Prestamista.HomePrestamistaPage">
-    
-    
-
-</MasterDetailPage>
+             x:Class="PrestApp.Views.Prestamista.HomePrestamistaPage"
+             xmlns:local="clr-namespace:PrestApp">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Ésta será la página de inicio del prestamista"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                 FontSize="Medium"
+                 FontAttributes="Bold"
+                 TextColor="#052A48"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

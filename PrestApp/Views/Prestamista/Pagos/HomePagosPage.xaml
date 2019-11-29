@@ -4,13 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.Views.Prestamista.Pagos.HomePagosPage"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="PrestApp.Views.Prestamista.Pagos.HomePagosPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Aquí se verán los pagos"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="Medium"
+                FontAttributes="Bold"
+                TextColor="#052A48"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
