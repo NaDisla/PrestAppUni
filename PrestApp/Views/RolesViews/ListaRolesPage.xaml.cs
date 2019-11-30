@@ -15,39 +15,42 @@ namespace PrestApp.Views.RolesViews
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaRolesPage : ContentPage
     {
-        List<Roles> listaRoles;
-        //private const string Url = "";
-        //private readonly HttpClient client = new HttpClient();
-        //private ObservableCollection<ClRoles> _roles;
+        List<Roles> roles;
+
+        //List<Roles> listaRoles;
+        //private const string Url = "https://prestapp.azurewebsites.net";
+        private readonly HttpClient client = new HttpClient();
+
+        private ObservableCollection<Roles> _roles;
 
         public ListaRolesPage()
         {
             InitializeComponent();
-            listaRoles = new List<Roles>();
-            //_roles = new ObservableCollection<ClRoles>();
+            //listaRoles = new List<Roles>();
+            _roles = new ObservableCollection<Roles>();
+            roles = new List<Roles>();
         }
         protected override async void OnAppearing()
         {
-            listaRoles = await App.client.GetTable<Roles>().ToListAsync();
-            rolesListView.ItemsSource = listaRoles;
+            /*listaRoles = await App.client.GetTable<Roles>().ToListAsync();
+            rolesListView.ItemsSource = listaRoles;*/
 
             /*string content = await client.GetStringAsync(Url);
             List<Roles> roles = JsonConvert.DeserializeObject<List<Roles>>(content);
-            listaRoles = new ObservableCollection<Roles>(roles);
-            rolesListView.ItemsSource = listaRoles;*/
+            _roles = new ObservableCollection<Roles>(roles);
+            rolesListView.ItemsSource = _roles;*/
 
-            //var url = new Uri("");
-            //var roles = new List<ClRoles>();
+            var url = new Uri("https://prestapp.azurewebsites.net");
 
-            //client.BaseAddress = url;
-            //var resp = await client.GetAsync("api/Roles/Get");
-            //if (resp.IsSuccessStatusCode)
-            //{
-            //    var repStr = resp.Content.ReadAsStringAsync();
-            //    roles = JsonConvert.DeserializeObject<List<ClRoles>>(repStr.Result.ToString());
-            //    _roles = new ObservableCollection<ClRoles>(roles);
-
-            //}
+            client.BaseAddress = url;
+            var resp = await client.GetAsync("api/Roles/Get");
+            if (resp.IsSuccessStatusCode)
+            {
+                var repStr = resp.Content.ReadAsStringAsync();
+                roles = JsonConvert.DeserializeObject<List<Roles>>(repStr.Result.ToString());
+                _roles = new ObservableCollection<Roles>(roles);
+                rolesListView.ItemsSource = _roles;
+            }
             base.OnAppearing();
         }
     }
