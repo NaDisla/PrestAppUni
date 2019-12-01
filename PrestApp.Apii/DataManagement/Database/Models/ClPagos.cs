@@ -25,7 +25,8 @@ namespace PrestApp.Api.DataManagement.Database.Models
         public double Pag_Interes { get; set; }
 
         public double Pag_CapitalPendiente { get; set; }
-
+        public int Pag_Mora { get; set; }
+        public string Pag_FormaPago { get; set; }
         public double Pag_MontoFinal { get; set; }
 
         public double Pag_InteresAcumulado { get; set; }

@@ -9,7 +9,7 @@ namespace PrestApp
 {
     public partial class App : Application
     {
-        //public static MobileServiceClient client = new MobileServiceClient("");
+        //public static MobileServiceClient client = new MobileServiceClient("https://prestappapi.azurewebsites.windows.net");
 
         public static MasterDetailPage MasterD { get; set; }
 

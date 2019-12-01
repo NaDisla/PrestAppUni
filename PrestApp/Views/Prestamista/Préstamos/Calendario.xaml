@@ -4,16 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.Views.RolesViews.ListaRolesPage">
-
-    <ListView x:Name="rolesListView">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding IDRol}"
-                          Detail="{Binding Nombre}" TextColor="Black"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-
-
+             x:Class="PrestApp.Views.Prestamista.Préstamos.Calendario"
+             xmlns:syncfusion="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             Title="Calendario">
+    <ContentPage.Content>
+        <syncfusion:Calendar 
+            x:Name="Calendario">
+        </syncfusion:Calendar>
+    </ContentPage.Content>
 </ContentPage>

@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Class="PrestApp.Views.Prestamista.HomePrestamistaPage"
              xmlns:local="clr-namespace:PrestApp"
-             Title="Dashboard - Prestamista">
+             Title="Dashboard"
+             IconImageSource="logoV6.png">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Ésta será la página de inicio del prestamista"
