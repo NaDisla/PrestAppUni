@@ -6,13 +6,18 @@
              xmlns:Custom="clr-namespace:PrestApp.Customs"
              xmlns:ViewModel="clr-namespace:PrestApp.ViewModels"
              mc:Ignorable="d"
-             x:Class="PrestApp.RegistroClientes"
-             NavigationPage.HasNavigationBar="False">
+             x:Class="PrestApp.Views.Prestamista.Clientes.RegistroClientesPage">
     <ContentPage.Content>
         <Grid>
             <StackLayout BackgroundColor="#379FC0" Opacity="0.8"/>
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -45,44 +50,26 @@
                                FontSize="16"
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
-                               Margin="17,0,22,0"
-                               WidthRequest="120"
+                               Margin="17,0,22,-12"
                                Opacity="0.7"
-                               x:Name="txtCedula"
-                               HorizontalOptions="Start"/>
-
-                        <Custom:SimpleCustomEntry Placeholder="Título Académico"
-                               FontAttributes="Bold"
-                               FontSize="16"
-                               TextColor="#052A48"
-                               PlaceholderColor="#052A48"
-                               Opacity="0.7"
-                               x:Name="cmbTituloAcdm"
-                               HorizontalOptions="End"/>
+                               x:Name="txtCedula"/>
                     </StackLayout>
                 </StackLayout>
 
-                <!--StackLayout Grid.Row="3"
-                             Margin="0,12,0,0"
-                             Spacing="15">
-                    <StackLayout Spacing="9">
-
-                    </StackLayout>
-                <-->
-
                 <StackLayout Grid.Row="3"
-                             Margin="0,12,0,0"
+                              Margin="0,25,0,0"
                              Spacing="15">
                     <StackLayout Spacing="9">
-                        <Custom:SimpleCustomEntry Placeholder="Contraseña"
+                        <Custom:SimpleCustomEntry Placeholder="Nombres"
                                FontAttributes="Bold"
                                FontSize="16"
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
-                               x:Name="txtClaveRegistro"
+                               Margin="17,0,22,0"                   
                                Opacity="0.7"
-                               Margin="17,0,22,0"
-                               IsPassword="True"/>
+                               x:Name="txtNombres"
+                               HorizontalOptions="Start"
+                               WidthRequest="145"/>
                     </StackLayout>
                 </StackLayout>
 
@@ -90,22 +77,124 @@
                              Margin="0,12,0,0"
                              Spacing="15">
                     <StackLayout Spacing="9">
-                        <Custom:SimpleCustomEntry Placeholder="Confirmar contraseña"
+                        <Custom:SimpleCustomEntry Placeholder="Apellidos"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               x:Name="txtApellidos"
+                               Opacity="0.7"
+                               Margin="17,-64,22,20"
+                               HorizontalOptions="End"
+                               WidthRequest="145"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="5"
+                             Margin="0,12,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Dirección"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               Margin="17,-12,22,0"
+                               Opacity="0.7"
+                               x:Name="txtDireccion"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="6"
+                             Margin="0,12,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Correo Electrónico"
                                FontAttributes="Bold"
                                FontSize="16"
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
                                Margin="17,0,22,0"
                                Opacity="0.7"
-                               x:Name="txtConfirmarClave"
-                               IsPassword="True"/>
+                               x:Name="txtCorreo"/>
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Grid.Row="5"
+                <StackLayout Grid.Row="7"
+                              Margin="0,25,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Tel. Residencial"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               Margin="17,0,22,0"                   
+                               Opacity="0.7"
+                               x:Name="txtTelCasa"
+                               HorizontalOptions="Start"
+                               WidthRequest="145"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="8"
+                             Margin="0,12,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Custom:SimpleCustomEntry Placeholder="Tel. Celular"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               PlaceholderColor="#052A48"
+                               x:Name="txtCelular"
+                               Opacity="0.7"
+                               Margin="17,-64,22,20"
+                               HorizontalOptions="End"
+                               WidthRequest="145"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="9"
+                              Margin="0,25,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <DatePicker
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#052A48"
+                               Margin="17,-20,22,0"                   
+                               Opacity="0.7"
+                               x:Name="dtpFechaNacimiento"
+                               HorizontalOptions="Start"
+                               WidthRequest="145"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="10"
+                              Margin="0,25,0,0"
+                             Spacing="15">
+                    <StackLayout Spacing="9">
+                        <Picker Title="Estado Civil"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TitleColor="#052A48"
+                               Margin="17,-20,22,0"                   
+                               Opacity="0.7"
+                               x:Name="cmbEstadoCivil"
+                               HorizontalOptions="Start"
+                               WidthRequest="145">
+                            <Picker.ItemsSource>
+                                <x:String>Soltero(a)</x:String>
+                                <x:String>Casado(a)</x:String>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="11"
                                          Spacing="26"
                                          Margin="0, 94, 0, 0">
-                    <Button Text="Registrarme"
+                    <Button Text="Registrar"
                                         HorizontalOptions="Center"
                                         Padding="20,0,20,0"
                                         FontSize="16"
@@ -115,7 +204,7 @@
                                         BorderColor="White"
                                         BorderWidth="2"
                                         CornerRadius="8"
-                                        x:Name="btnLogin"
+                                        x:Name="btnRegistroCliente"
                                         Opacity="0.8"/>
                 </StackLayout>
             </Grid>

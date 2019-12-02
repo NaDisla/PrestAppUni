@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PrestApp
+namespace PrestApp.Views.Prestamista.Clientes
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegistroClientes : ContentPage
+    public partial class RegistroClientesPage : ContentPage
     {
-        public RegistroClientes()
+        public RegistroClientesPage()
         {
             InitializeComponent();
         }

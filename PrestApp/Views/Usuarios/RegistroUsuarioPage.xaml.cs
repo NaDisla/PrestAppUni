@@ -39,10 +39,14 @@ namespace PrestApp.Views.Usuarios
                         Usu_Nombre = txtNombreUsuario.Text,
                         Usu_Pass = Encoding.UTF8.GetBytes(txtClaveRegistro.Text)
                     };
-                    string content = JsonConvert.SerializeObject(usuario);
-                    await client.PostAsync(Url, new StringContent(content, Encoding.UTF8, "application/json"));
-                    
-                    _usuarios.Insert(0, usuario);
+                HttpResponseMessage response = await client.GetAsync(Url);
+                dynamic likesResult = await response.Content.ReadAsStringAsync();
+                string content = JsonConvert.SerializeObject(usuario);
+                await client.PostAsync(Url, new StringContent(content, Encoding.UTF8, "application/json"));
+                 var users = (JsonConvert.DeserializeObject<IDictionary<string, object>>(likesResult.ToString()))["ClUsuarios"]["rolID"];
+                //var users = JsonConvert.DeserializeObject<IDictionary<string, ClUsuarios>>(content);
+                _usuarios = new ObservableCollection<ClUsuarios>(users);
+                _usuarios.Insert(0, usuario);
                 }
                 else
                 {

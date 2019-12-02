@@ -10,7 +10,17 @@ namespace PrestApp.Clases
 {
     public class ClUsuarios : INotifyPropertyChanged
     {
-        public int Rol_ID { get; set; }
+        private int _rolID;
+        [JsonProperty("rolID")]
+        public int Rol_ID
+        {
+            get => _rolID;
+            set
+            {
+                _rolID= value;
+                OnPropertyChanged();
+            }
+        }
 
         private string _usuNombreReal;
         [JsonProperty("nombreReal")]
