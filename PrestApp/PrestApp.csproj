@@ -21,10 +21,12 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
     <PackageReference Include="Rg.Plugins.Popup.Gmo" Version="1.1.5.3" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="17.3.0.29" />
     <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
     <PackageReference Include="UXDivers.Effects" Version="0.6.3" />
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991210-pre2" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="XamForms.Controls.Calendar" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,12 +39,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="App.xaml.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
     <Compile Update="Views\Prestamista\Clientes\RegistroClientesPage.xaml.cs">
       <DependentUpon>RegistroClientesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Roles\ListaRolesPage.xaml.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\AcercaDePrestApp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Administrador\AdministradorHomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -67,16 +78,19 @@
     <EmbeddedResource Update="Views\Prestamista\Pagos\HomePagosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Prestamista\Préstamos\HomePrestamosPage.xaml">
+    <EmbeddedResource Update="Views\Prestamista\Préstamos\CalculadoraPrestamos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RolesViews\ListaRolesPage.xaml">
+    <EmbeddedResource Update="Views\Prestamista\Préstamos\Calendario.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Prestamista\Préstamos\HomePrestamosPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Prestamista\Clientes\RegistroClientesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RolesViews\RegistroRolesPage.xaml">
+    <EmbeddedResource Update="Views\Roles\RegistroRolesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Usuarios\GeneralLoginPage.xaml">

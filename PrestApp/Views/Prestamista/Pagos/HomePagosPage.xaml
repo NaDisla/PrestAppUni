@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.Views.Prestamista.Pagos.HomePagosPage">
+             x:Class="PrestApp.Views.Prestamista.Pagos.HomePagosPage"
+             Title="Dashboard - Pagos">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Aquí se verán los pagos"

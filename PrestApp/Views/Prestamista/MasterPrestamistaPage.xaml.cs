@@ -9,8 +9,7 @@ using PrestApp.Views.Prestamista.Préstamos;
 using PrestApp.Views.Prestamista.Clientes;
 using PrestApp.Views.Prestamista.Pagos;
 using PrestApp.Views.Prestamista.MenuItems;
-using PrestApp.Views.Prestamista;
-using PrestApp.Views.RolesViews;
+using PrestApp.Views.Roles;
 using PrestApp.Clases;
 namespace PrestApp.Views.Prestamista
 {
@@ -58,11 +57,32 @@ namespace PrestApp.Views.Prestamista
             ListadoMenu.Add(pag4);
             MasterPrestamistaItem pag5 = new MasterPrestamistaItem()
             {
+                Title = "Calculadora de Préstamos",
+                Icon = "calculadora.png",
+                TargetType = typeof(CalculadoraPrestamos)
+            };
+            ListadoMenu.Add(pag5);
+            MasterPrestamistaItem pag6 = new MasterPrestamistaItem()
+            {
+                Title = "Calendario",
+                Icon = "calendario.png",
+                TargetType = typeof(Calendario)
+            };
+            ListadoMenu.Add(pag6);
+            MasterPrestamistaItem pag7 = new MasterPrestamistaItem()
+            {
+                Title = "Acerca de PrestApp",
+                Icon = "informacion.png",
+                TargetType = typeof(AcercaDePrestApp)
+            };
+            ListadoMenu.Add(pag7);
+            MasterPrestamistaItem pag8 = new MasterPrestamistaItem()
+            {
                 Title = "Prueba de Roles",
                 Icon = "clientes.png",
                 TargetType = typeof(ListaRolesPage)
             };
-            ListadoMenu.Add(pag5);
+            ListadoMenu.Add(pag8);
             this.navigationDrawerList.ItemsSource = ListadoMenu;
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePrestamistaPage)));
             this.navigationDrawerList.ItemSelected += NavigationDrawerList_ItemSelected;
