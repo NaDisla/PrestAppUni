@@ -9,11 +9,9 @@
     <ListView x:Name="rolesListView">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding IDRol}"
+                <TextCell Text="{Binding IdRol}"
                           Detail="{Binding Nombre}" TextColor="Black"/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
-
 </ContentPage>

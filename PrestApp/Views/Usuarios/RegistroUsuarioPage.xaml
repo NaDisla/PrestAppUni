@@ -114,7 +114,8 @@
                                         BorderColor="White"
                                         BorderWidth="2"
                                         CornerRadius="8"
-                                        x:Name="btnLogin"
+                                        x:Name="btnRegistro"
+                                        Clicked="BtnRegistro_Clicked"        
                                         Opacity="0.8"/>
                 </StackLayout>
             </Grid>

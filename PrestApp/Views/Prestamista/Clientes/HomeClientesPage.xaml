@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="PrestApp.Views.Prestamista.Clientes.HomeClientesPage"
-             xmlns:Custom="clr-namespace:PrestApp.Customs"
-             NavigationPage.HasNavigationBar="False">
+             xmlns:Custom="clr-namespace:PrestApp.Customs">
     <ContentPage.Content>
         <Grid>
             <StackLayout BackgroundColor="#E9F4F8" Opacity="0.8"/>

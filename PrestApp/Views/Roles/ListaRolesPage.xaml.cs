@@ -15,28 +15,21 @@ namespace PrestApp.Views.Roles
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaRolesPage : ContentPage
     {
+        private const string Url = "https://prestappapi.azurewebsites.net/api/roles/get";
         private readonly HttpClient client = new HttpClient();
         private ObservableCollection<ClRoles> _roles;
 
         public ListaRolesPage()
         {
             InitializeComponent();
-            _roles = new ObservableCollection<ClRoles>();
         }
         protected override async void OnAppearing()
         {
-            var url = new Uri("https://192.168.250.94:44330/");
-            var roles = new List<ClRoles>();
+            string content = await client.GetStringAsync(Url);
+            List<ClRoles> roles = JsonConvert.DeserializeObject<List<ClRoles>>(content);
+            _roles = new ObservableCollection<ClRoles>(roles);
+            rolesListView.ItemsSource = _roles;
 
-            client.BaseAddress = url;
-            var resp = await client.GetAsync("api/Roles/Get");
-            if (resp.IsSuccessStatusCode)
-            {
-                var repStr = resp.Content.ReadAsStringAsync();
-                roles = JsonConvert.DeserializeObject<List<ClRoles>>(repStr.Result.ToString());
-                _roles = new ObservableCollection<ClRoles>(roles);
-                rolesListView.ItemsSource = _roles;
-            }
             base.OnAppearing();
         }
     }

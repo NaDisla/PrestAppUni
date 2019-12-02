@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PrestApp.Views.Prestamista;
+using System.Net.Http;
 
 namespace PrestApp.Views.Usuarios
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GeneralLoginPage : ContentPage
     {
+
         public GeneralLoginPage()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace PrestApp.Views.Usuarios
 
         private void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePrestamistaPage());
+            Navigation.PushAsync(new MasterPrestamistaPage());
         }
     }
 }

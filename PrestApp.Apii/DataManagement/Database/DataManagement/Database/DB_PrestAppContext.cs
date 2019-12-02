@@ -20,7 +20,7 @@ namespace PrestApp.Api.DataManagement.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=DB_PrestApp;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=tcp:prestappapidbserver.database.windows.net, 1433;Initial Catalog=PrestAppApi_db;User ID=Grupo01;Password=pa-123456");
             }
         }
 

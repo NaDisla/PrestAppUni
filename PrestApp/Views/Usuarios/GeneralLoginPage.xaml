@@ -96,7 +96,8 @@
                                            FontSize="16"
                                            TextColor="White"
                                            FontAttributes="Bold" 
-                                           HorizontalOptions="CenterAndExpand">
+                                           HorizontalOptions="CenterAndExpand"
+                                       >
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer 
                                                 Command = "{Binding OlvidarClave}">
