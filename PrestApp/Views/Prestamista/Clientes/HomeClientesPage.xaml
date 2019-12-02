@@ -14,7 +14,6 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <StackLayout Grid.Row="0"
@@ -28,19 +27,6 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="1"
-                             Margin="0,25,0,20"
-                             Spacing="15">
-                    <ListView x:Name="clientesListView">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextCell Text="Nombre"
-                          Detail="{Binding Nombres}" TextColor="#052A48"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
-
-                <StackLayout Grid.Row="2"
                                          Spacing="26"
                                          Margin="0, 44, 0, 0">
                     <Button Text="Agregar cliente"

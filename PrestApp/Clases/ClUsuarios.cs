@@ -8,61 +8,27 @@ using Newtonsoft.Json;
 
 namespace PrestApp.Clases
 {
-    public class ClUsuarios : INotifyPropertyChanged
+    public class ClUsuarios
     {
-        private int _rolID;
-        [JsonProperty("rolID")]
-        public int Rol_ID
+        public int RolID
         {
-            get => _rolID;
-            set
-            {
-                _rolID= value;
-                OnPropertyChanged();
-            }
+            get;
+            set;
         }
-
-        private string _usuNombreReal;
-        [JsonProperty("nombreReal")]
-        public string Usu_NombreReal
+        public string UsuNombreReal
         {
-            get => _usuNombreReal;
-            set
-            {
-                _usuNombreReal = value;
-                OnPropertyChanged();
-            }
+            get;
+            set;
         }
-
-        private string _usuNombre;
-        [JsonProperty("nombre")]
-        public string Usu_Nombre
+        public string UsuNombre
         {
-            get => _usuNombre;
-            set
-            {
-                _usuNombre = value;
-                OnPropertyChanged();
-            }
+            get;
+            set;
         }
-
-        private byte[] _usuPass;
-        [JsonProperty("password")]
-        public byte[] Usu_Pass
+        public byte[] UsuPass
         {
-            get => _usuPass;
-            set
-            {
-                _usuPass = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get;
+            set;
         }
 
     }

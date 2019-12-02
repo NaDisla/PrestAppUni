@@ -10,6 +10,7 @@ using PrestApp.Views.Prestamista.Clientes;
 using PrestApp.Views.Prestamista.Pagos;
 using PrestApp.Views.Prestamista.MenuItems;
 using PrestApp.Views.Roles;
+using PrestApp.Views.Usuarios;
 using PrestApp.Clases;
 namespace PrestApp.Views.Prestamista
 {
@@ -83,6 +84,13 @@ namespace PrestApp.Views.Prestamista
                 TargetType = typeof(ListaRolesPage)
             };
             ListadoMenu.Add(pag8);
+            MasterPrestamistaItem pag9 = new MasterPrestamistaItem()
+            {
+                Title = "Prueba de Usuarios",
+                Icon = "clientes.png",
+                TargetType = typeof(ListaUsuariosPage)
+            };
+            ListadoMenu.Add(pag9);
             this.navigationDrawerList.ItemsSource = ListadoMenu;
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(HomePrestamistaPage)));
             this.navigationDrawerList.ItemSelected += NavigationDrawerList_ItemSelected;

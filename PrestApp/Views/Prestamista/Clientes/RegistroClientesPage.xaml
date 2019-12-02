@@ -51,8 +51,7 @@
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
                                Margin="17,0,22,-12"
-                               Opacity="0.7"
-                               x:Name="txtCedula"/>
+                               Opacity="0.7"/>
                     </StackLayout>
                 </StackLayout>
 
@@ -67,7 +66,6 @@
                                PlaceholderColor="#052A48"
                                Margin="17,0,22,0"                   
                                Opacity="0.7"
-                               x:Name="txtNombres"
                                HorizontalOptions="Start"
                                WidthRequest="145"/>
                     </StackLayout>
@@ -82,7 +80,6 @@
                                FontSize="16"
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
-                               x:Name="txtApellidos"
                                Opacity="0.7"
                                Margin="17,-64,22,20"
                                HorizontalOptions="End"
@@ -100,8 +97,7 @@
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
                                Margin="17,-12,22,0"
-                               Opacity="0.7"
-                               x:Name="txtDireccion"/>
+                               Opacity="0.7"/>
                     </StackLayout>
                 </StackLayout>
 
@@ -115,8 +111,7 @@
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
                                Margin="17,0,22,0"
-                               Opacity="0.7"
-                               x:Name="txtCorreo"/>
+                               Opacity="0.7"/>
                     </StackLayout>
                 </StackLayout>
 
@@ -131,7 +126,6 @@
                                PlaceholderColor="#052A48"
                                Margin="17,0,22,0"                   
                                Opacity="0.7"
-                               x:Name="txtTelCasa"
                                HorizontalOptions="Start"
                                WidthRequest="145"/>
                     </StackLayout>
@@ -146,7 +140,6 @@
                                FontSize="16"
                                TextColor="#052A48"
                                PlaceholderColor="#052A48"
-                               x:Name="txtCelular"
                                Opacity="0.7"
                                Margin="17,-64,22,20"
                                HorizontalOptions="End"
@@ -164,7 +157,6 @@
                                TextColor="#052A48"
                                Margin="17,-20,22,0"                   
                                Opacity="0.7"
-                               x:Name="dtpFechaNacimiento"
                                HorizontalOptions="Start"
                                WidthRequest="145"/>
                     </StackLayout>
@@ -180,7 +172,6 @@
                                TitleColor="#052A48"
                                Margin="17,-20,22,0"                   
                                Opacity="0.7"
-                               x:Name="cmbEstadoCivil"
                                HorizontalOptions="Start"
                                WidthRequest="145">
                             <Picker.ItemsSource>
@@ -204,7 +195,6 @@
                                         BorderColor="White"
                                         BorderWidth="2"
                                         CornerRadius="8"
-                                        x:Name="btnRegistroCliente"
                                         Opacity="0.8"/>
                 </StackLayout>
             </Grid>
