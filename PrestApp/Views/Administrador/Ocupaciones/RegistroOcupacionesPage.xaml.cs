@@ -24,7 +24,7 @@ namespace PrestApp.Views.Administrador.Ocupaciones
         {
             ClOcupaciones ocupacion = new ClOcupaciones
             {
-                ocu_Nombre = txtNombre.Text
+                Nombre = txtNombre.Text
             };
 
             var client = new HttpClient();

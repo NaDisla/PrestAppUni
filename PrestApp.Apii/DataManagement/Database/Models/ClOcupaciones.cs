@@ -10,22 +10,22 @@ namespace PrestApp.Api.DataManagement.Database.Models
     public class ClOcupaciones
     {
         [NotMapped]
-        private int ocu_ID;
+        private int idOcu;
         [Key]
         [Column("Ocu_ID")]
         public int IDOcu
         {
-            get {return ocu_ID; }
-            set {ocu_ID = value; }
+            get {return idOcu; }
+            set {idOcu = value; }
         }
         [NotMapped]
-        private string ocu_Nombre;
+        private string nombre;
 
         [Column("Ocu_Nombre")]
         public string Nombre
         {
-            get { return ocu_Nombre; }
-            set { ocu_Nombre = value; }
+            get { return nombre; }
+            set { nombre = value; }
         }
     }
 }

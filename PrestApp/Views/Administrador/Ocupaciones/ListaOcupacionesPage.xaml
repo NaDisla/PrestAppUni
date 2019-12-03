@@ -8,8 +8,8 @@
     <ListView x:Name="ocupacionesListView">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding ocu_ID}"
-                          Detail="{Binding ocu_Nombre}" TextColor="Black"/>
+                <TextCell Text="{Binding IdOcu}"
+                          Detail="{Binding Nombre}" TextColor="Black"/>
             </DataTemplate>
         </ListView.ItemTemplate>
         <ListView.Footer>

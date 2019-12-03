@@ -16,5 +16,10 @@ namespace PrestApp.Views.Prestamista.Clientes
         {
             InitializeComponent();
         }
+
+        private void BtnRegistroCliente_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
