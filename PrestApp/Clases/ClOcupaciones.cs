@@ -6,7 +6,7 @@ namespace PrestApp.Clases
 {
     public class ClOcupaciones
     {
-        public int Ocu_ID { get; set; }
-        public string Ocu_Nombre { get; set; }
+        public int ocu_ID { get; set; }
+        public string ocu_Nombre { get; set; }
     }
 }

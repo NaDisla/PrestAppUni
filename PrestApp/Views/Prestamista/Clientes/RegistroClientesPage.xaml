@@ -4,9 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:Custom="clr-namespace:PrestApp.Customs"
-             xmlns:ViewModel="clr-namespace:PrestApp.ViewModels"
              mc:Ignorable="d"
              x:Class="PrestApp.Views.Prestamista.Clientes.RegistroClientesPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logoV6.png" Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <StackLayout BackgroundColor="#379FC0" Opacity="0.8"/>

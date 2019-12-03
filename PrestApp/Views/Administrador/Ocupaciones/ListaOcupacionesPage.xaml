@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PrestApp.Views.Administrador.Ocupaciones.ListaOcupacionesPage">
+    <ListView x:Name="ocupacionesListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding ocu_ID}"
+                          Detail="{Binding ocu_Nombre}" TextColor="Black"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Footer>
+            <ContentView>
+                <Button Text="Agregar Ocupación"
+                     Padding="20,0,20,0"
+                     BackgroundColor="#052A48"
+                     TextColor="White"
+                     FontAttributes="Bold"
+                     BorderColor="White"
+                     BorderWidth="2"
+                     CornerRadius="8"
+                     x:Name="btnAgregarOcupacion"
+                     Margin="40, 90, 40, 0"
+                     Clicked="BtnAgregarOcupacion_Clicked"/>
+            </ContentView>
+        </ListView.Footer>
+    </ListView>
+</ContentPage>

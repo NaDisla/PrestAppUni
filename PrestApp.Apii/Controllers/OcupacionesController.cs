@@ -15,12 +15,12 @@ namespace PrestApp.Api.Controllers
 
         [Route("api/Ocupaciones/Get")]
         [HttpGet]
-        public ObjectResult ListaPrestamos()
+        public ObjectResult ListaOcupaciones()
         {
             try
             {
-                var pagos = generic.ObtenerTodos();
-                return Ok(pagos);
+                var ocupaciones = generic.ObtenerTodos();
+                return Ok(ocupaciones);
             }
             catch (Exception e)
             {
@@ -35,8 +35,8 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var pago = generic.Obtener(id);
-                return Ok(pago);
+                var ocupacion = generic.Obtener(id);
+                return Ok(ocupacion);
             }
             catch (Exception e)
             {
@@ -46,13 +46,13 @@ namespace PrestApp.Api.Controllers
         }
 
         [Route("api/Ocupaciones/Insert")]
-        [HttpGet]
-        public ObjectResult Insert(ClOcupaciones pago)
+        [HttpPost]
+        public ObjectResult Insert(ClOcupaciones ocupacion)
         {
             try
             {
-                var pagos = generic.Insertar(pago);
-                return Ok(pagos);
+                var ocupaciones = generic.Insertar(ocupacion);
+                return Ok(ocupaciones);
             }
             catch (Exception e)
             {
@@ -62,13 +62,13 @@ namespace PrestApp.Api.Controllers
         }
 
         [Route("api/Ocupaciones/Update")]
-        [HttpGet]
-        public ObjectResult Update(ClOcupaciones pago)
+        [HttpPut]
+        public ObjectResult Update(ClOcupaciones ocupacion)
         {
             try
             {
-                var prestamo = generic.Actualizar(pago);
-                return Ok(prestamo);
+                var ocupaciones = generic.Actualizar(ocupacion);
+                return Ok(ocupacion);
             }
             catch (Exception e)
             {
@@ -78,12 +78,12 @@ namespace PrestApp.Api.Controllers
         }
 
         [Route("api/Ocupaciones/Delete")]
-        [HttpGet]
+        [HttpDelete]
         public ObjectResult Delete(ClOcupaciones id)
         {
             try
             {
-                var ok = generic.Eliminar(id.Ocu_ID);
+                var ok = generic.Eliminar(id.IDOcu);
                 return Ok(ok);
             }
             catch (Exception e)

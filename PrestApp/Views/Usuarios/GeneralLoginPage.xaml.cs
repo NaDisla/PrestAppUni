@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PrestApp.Views.Prestamista;
+using PrestApp.Views.Administrador;
 using System.Net.Http;
 
 namespace PrestApp.Views.Usuarios
@@ -26,7 +27,16 @@ namespace PrestApp.Views.Usuarios
 
         private void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MasterPrestamistaPage());
+            if(txtUsuarioLogin.Text == "admin" && txtClaveLogin.Text == "1234")
+            {
+                Navigation.PushAsync(new MasterAdministradorPage());
+                DisplayAlert("Inicio de sesión satisfactorio", "Bienvenido(a) " + txtUsuarioLogin.Text, "Continuar");
+            }
+            else if(txtUsuarioLogin.Text == "nadisla" && txtClaveLogin.Text == "1908")
+            {
+                Navigation.PushAsync(new MasterPrestamistaPage());
+                DisplayAlert("Inicio de sesión satisfactorio", "Bienvenido(a) " + txtUsuarioLogin.Text, "Continuar");
+            }
         }
     }
 }

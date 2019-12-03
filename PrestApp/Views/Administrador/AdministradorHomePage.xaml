@@ -7,9 +7,12 @@
              x:Class="PrestApp.Views.Administrador.AdministradorHomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Página de inicio del administrador"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                TextColor="#052A48" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

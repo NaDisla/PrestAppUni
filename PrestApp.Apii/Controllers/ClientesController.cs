@@ -83,7 +83,7 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var ok = generic.Eliminar(id.Cli_ID);
+                var ok = generic.Eliminar(id.IDCli);
                 return Ok(ok);
             }
             catch (Exception e)
