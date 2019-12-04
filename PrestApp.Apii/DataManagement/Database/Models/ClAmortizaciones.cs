@@ -15,7 +15,8 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         public int Prest_ID { get; set; }
         [ForeignKey("Prest_ID")]
-        public ClPrestamos Prestamo { get; set; }
+        public ClPrestamos Prestamos { get; set; }
+        
         public int Cli_ID { get; set; }
         [ForeignKey("Cli_ID")]
         public ClClientes Clientes { get; set; }

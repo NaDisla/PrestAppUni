@@ -9,7 +9,7 @@
              Title="Calendario">
     <ContentPage.Content>
         <syncfusion:Calendar 
-            x:Name="Calendario">
+            x:Name="calendario">
         </syncfusion:Calendar>
     </ContentPage.Content>
 </ContentPage>

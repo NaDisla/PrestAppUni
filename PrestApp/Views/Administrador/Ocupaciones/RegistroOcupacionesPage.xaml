@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:Custom="clr-namespace:PrestApp.Customs"
+             xmlns:ViewModel="clr-namespace:PrestApp.ViewModels"
+             x:Class="PrestApp.Views.Administrador.Ocupaciones.RegistroOcupacionesPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="PrestApp - Agregando nueva Ocupación" Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Custom:SimpleCustomEntry x:Name="txtNombre" 
+                   Placeholder="Nombre" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Button x:Name="btnRegistroOcupacion" 
+                    Text="Registrar Ocupación" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="180" 
+                    Margin="20" 
+                    BackgroundColor="#379FC0" 
+                    TextColor="White" 
+                    BorderWidth="3" 
+                    BorderColor="White" 
+                    CornerRadius="15" 
+                    Opacity="0.7"
+                    Clicked="BtnRegistroOcupacion_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

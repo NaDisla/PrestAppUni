@@ -9,126 +9,122 @@ namespace PrestApp.Api.DataManagement.Database.Models
     [Table("Clientes")]
     public class ClClientes
     {
+        [NotMapped]
         private int idCliente;
-
         [Key]
-        public int Cli_ID
+        [Column("Cli_ID")]
+        public int IDCli
         {
             get { return idCliente; }
             set { idCliente = value; }
         }
-
+        [NotMapped]
         private int idTítuloAcdm;
-
-        public int TitAcdm_ID
+        [ForeignKey("TitAcdm_ID")]
+        public int IDTitAcdm
         {
             get { return idTítuloAcdm; }
             set { idTítuloAcdm = value; }
         }
-        [ForeignKey("TitAcdm_ID")]
-        public ClTitulosAcademicos TituloAcademico { get; set; }
-
+        [NotMapped]
         private int idOcupación;
-
-        public int Ocu_ID
+        [ForeignKey("Ocu_ID")]
+        public int IDOcu
         {
             get { return idOcupación; }
             set { idOcupación = value; }
         }
-
-        [ForeignKey("Ocu_ID")]
-        public ClOcupaciones Ocupacion { get; set; }
-
         private string nombres;
-
-        public string Cli_Nombres
+        [Column("Cli_Nombres")]
+        public string Nombres
         {
             get { return nombres; }
             set { nombres = value; }
         }
-
+        [NotMapped]
         private string apellidos;
-
-        public string Cli_Apellidos
+        [Column("Cli_Apellidos")]
+        public string Apellidos
         {
             get { return apellidos; }
             set { apellidos = value; }
         }
-
+        [NotMapped]
         private char género;
-
-        public char Cli_Genero
+        [Column("Cli_Genero")]
+        public char Genero
         {
             get { return género; }
             set { género = value; }
         }
-
+        [NotMapped]
         private string cédula;
-
+        [Column("Cli_Cédula")]
         public string Cli_Cedula
         {
             get { return cédula; }
             set { cédula = value; }
         }
+        [NotMapped]
         private DateTime fechaNacimiento;
-
-        public DateTime Cli_FechaNacimiento
+        [Column("Cli_FechaNacimiento")]
+        public DateTime FechaNacimiento
         {
             get { return fechaNacimiento; }
             set { fechaNacimiento = value; }
         }
-
+        [NotMapped]
         private string telCasa;
-
-        public string Cli_TelCasa
+        [Column("Cli_TelCasa")]
+        public string TelCasa
         {
             get { return telCasa; }
             set { telCasa = value; }
         }
-
+        [NotMapped]
         private string telCelular;
-
-        public string Cli_TelCelular
+        [Column("Cli_TelCelular")]
+        public string TelCelular
         {
             get { return telCelular; }
             set { telCelular = value; }
         }
-
+        [NotMapped]
         private string estadoCivil;
-
-        public string Cli_EstadoCivil
+        [Column("Cli_EstadoCivil")]
+        public string EstadoCivil
         {
             get { return estadoCivil; }
             set { estadoCivil = value; }
         }
-
-        private byte dependientes;
-
-        public byte Cli_Dependientes
+        [NotMapped]
+        private int dependientes;
+        [Column("Cli_Dependientes")]
+        public int Dependientes
         {
             get { return dependientes; }
             set { dependientes = value; }
         }
-
+        [NotMapped]
         private decimal ingresos;
-
-        public decimal Cli_Ingresos
+        [Column("Cli_Ingresos")]
+        public decimal Ingresos
         {
             get { return ingresos; }
             set { ingresos = value; }
         }
-
+        [NotMapped]
         private string dirección;
-
-        public string Cli_Direccion
+        [Column("Cli_Dirección")]
+        public string Dirección
         {
             get { return dirección; }
             set { dirección = value; }
         }
-
+        [NotMapped]
         private string correo;
-
-        public string Cli_Correo
+        [Column("Cli_Correo")]
+        public string Correo
         {
             get { return correo; }
             set { correo = value; }

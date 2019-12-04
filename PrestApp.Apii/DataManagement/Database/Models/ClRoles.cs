@@ -27,10 +27,5 @@ namespace PrestApp.Api.DataManagement.Database.Models
             get { return nombre; }
             set { nombre = value; }
         }
-
-        /*public override string ToString()
-        {
-            return string.Format("{0} {1}", IDRol, Nombre);
-        }*/
     }
 }
