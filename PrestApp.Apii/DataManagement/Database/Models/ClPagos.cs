@@ -18,17 +18,17 @@ namespace PrestApp.Api.DataManagement.Database.Models
 
         public DateTime Pag_Fecha { get; set; }
 
-        public double Pag_BalanceInicial { get; set; }
+        public decimal Pag_BalanceInicial { get; set; }
 
-        public double Pag_CuotaPrestamo { get; set; }
+        public decimal Pag_CuotaPrestamo { get; set; }
 
-        public double Pag_Interes { get; set; }
+        public decimal Pag_Interes { get; set; }
 
         public double Pag_CapitalPendiente { get; set; }
         public int Pag_Mora { get; set; }
         public string Pag_FormaPago { get; set; }
         public double Pag_MontoFinal { get; set; }
 
-        public double Pag_InteresAcumulado { get; set; }
+        public decimal Pag_InteresAcumulado { get; set; }
     }
 }

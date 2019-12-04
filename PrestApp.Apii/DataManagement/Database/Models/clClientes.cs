@@ -34,7 +34,6 @@ namespace PrestApp.Api.DataManagement.Database.Models
             get { return idOcupación; }
             set { idOcupación = value; }
         }
-        [NotMapped]
         private string nombres;
         [Column("Cli_Nombres")]
         public string Nombres
@@ -61,17 +60,17 @@ namespace PrestApp.Api.DataManagement.Database.Models
         [NotMapped]
         private string cédula;
         [Column("Cli_Cédula")]
-        public string Cedula
+        public string Cli_Cedula
         {
             get { return cédula; }
             set { cédula = value; }
         }
         [NotMapped]
-        private string fechaNacimiento;
+        private DateTime fechaNacimiento;
         [Column("Cli_FechaNacimiento")]
-        public string FechaNacimiento
+        public DateTime FechaNacimiento
         {
-            get { return string.Format("{0:dd-MM-yy}",fechaNacimiento); }
+            get { return fechaNacimiento; }
             set { fechaNacimiento = value; }
         }
         [NotMapped]

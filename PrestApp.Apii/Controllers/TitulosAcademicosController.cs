@@ -77,13 +77,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("api/TitulosAcademicos/Delete")]
+        [Route("api/TitulosAcademicos/Delete/{id}")]
         [HttpDelete]
-        public ObjectResult Delete(ClTitulosAcademicos tituloAcademico)
+        public ObjectResult Delete(int id)
         {
             try
             {
-                var ok = generic.Eliminar(tituloAcademico.TitAcdm_ID);
+                var ok = generic.Eliminar(id);
                 return Ok(ok);
             }
             catch (Exception e)

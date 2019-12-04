@@ -15,6 +15,9 @@ namespace PrestApp.Api.Controllers
     {
 
         ICRUDModel<ClPagos> generic = new CRUDModel<ClPagos>();
+        ICRUDModel<ClClientes> dataCliente= new CRUDModel<ClClientes>();
+        ICRUDModel<ClTitulosAcademicos> datatitulo = new CRUDModel<ClTitulosAcademicos>();
+        ICRUDModel<ClOcupaciones> dataOcupacion = new CRUDModel<ClOcupaciones>();
 
         [Route("api/Pagos/Get")]
         [HttpGet]
@@ -23,7 +26,13 @@ namespace PrestApp.Api.Controllers
             try
             {
                 var pagos = generic.ObtenerTodos();
-                return Ok(pagos );
+                foreach (var item in pagos)
+                {
+                    item.ClCliente = dataCliente.Obtener(item.Cli_ID);
+                    item.ClCliente.TituloAcademico = datatitulo.Obtener(item.ClCliente.TitAcdm_ID);
+                    item.ClCliente.Ocupacion = dataOcupacion.Obtener(item.ClCliente.Ocu_ID);
+                }
+                return Ok(pagos);
             }
             catch (Exception e)
             {
@@ -39,6 +48,9 @@ namespace PrestApp.Api.Controllers
             try
             {
                 var pago = generic.Obtener(id);
+                pago.ClCliente = dataCliente.Obtener(pago.Cli_ID);
+                pago.ClCliente.TituloAcademico = datatitulo.Obtener(pago.ClCliente.TitAcdm_ID);
+                pago.ClCliente.Ocupacion = dataOcupacion.Obtener(pago.ClCliente.Ocu_ID);
                 return Ok(pago);
             }
             catch (Exception e)
@@ -80,13 +92,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("api/Pagos/Delete")]
+        [Route("api/Pagos/Delete/{id}")]
         [HttpDelete]
-        public ObjectResult Delete(ClPagos id)
+        public ObjectResult Delete(int id)
         {
             try
             {
-                var ok = generic.Eliminar(id.Pag_ID);
+                var ok = generic.Eliminar(id);
                 return Ok(ok);
             }
             catch (Exception e)

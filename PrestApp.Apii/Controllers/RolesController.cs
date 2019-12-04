@@ -46,7 +46,7 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("api/Roles/Insert/{id}")]
+        [Route("api/Roles/Insert")]
         [HttpPost]
         public ObjectResult Insert(ClRoles Rol)
         {
@@ -84,7 +84,7 @@ namespace PrestApp.Apii.Controllers
         {
             try
             {
-                var roles = generic.Eliminar(id.IDRol);
+                var roles = generic.Eliminar(id);
                 return Ok(roles);
             }
             catch (Exception e)
