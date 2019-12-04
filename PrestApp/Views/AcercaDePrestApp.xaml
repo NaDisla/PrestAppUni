@@ -6,17 +6,39 @@
              mc:Ignorable="d"
              x:Class="PrestApp.Views.AcercaDePrestApp"
              Title="PrestApp - Acerca de">
+    
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="¿Qué es PrestApp?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                FontAttributes="Bold"
-                TextColor="#052A48"
-                FontSize="Medium"/>
+                                VerticalOptions="CenterAndExpand" 
+                                HorizontalOptions="CenterAndExpand"
+                                FontAttributes="Bold"
+                                TextColor="#052A48"
+                                FontSize="Medium"/>
             <StackLayout>
-                
+                <Label Text="PrestApp es una aplicación móvil orientada al ambiente financiero con la finalidad de optimizar la administración y manejo de préstamos llevados a cabo por los prestamistas y sus colaboradores. Su interfaz gráfica resulta de muy fácil manejo obteniendo como resultado una mejor comprensión del funcionamiento de este."
+                                    VerticalOptions="CenterAndExpand" 
+                                    HorizontalOptions="CenterAndExpand"
+                                    FontAttributes="Bold"
+                                    TextColor="#052A48"
+                                    FontSize="Medium"
+                                    Padding="20,0,20,0"/>
             </StackLayout>
+            <StackLayout>
+                <Label Text="De primera entrada, posee una pantalla de inicio de sesión, en donde el usuario correspondiente debe llenar los campos requeridos y así poder ingresar a la aplicación. En caso de no tener usuario se presenta la opción de registrarse y así el nuevo usuario pueda proceder al acceso de la aplicación."
+                                    VerticalOptions="CenterAndExpand" 
+                                    HorizontalOptions="CenterAndExpand"
+                                    FontAttributes="Bold"
+                                    TextColor="#052A48"
+                                    FontSize="Medium"
+                                    Padding="20,0,20,0"/>
+            </StackLayout>
+
+            <StackLayout Padding="0,0,0,20">
+
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
