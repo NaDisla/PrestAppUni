@@ -11,6 +11,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
+        <Grid>
             <StackLayout BackgroundColor="#379FC0" Opacity="0.8">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -202,6 +203,7 @@
                     </StackLayout>
                 </Grid>
             </StackLayout>
+        </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
