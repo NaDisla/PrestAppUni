@@ -5,13 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:Custom="clr-namespace:PrestApp.Customs"
-             x:Class="PrestApp.Views.Prestamista.Préstamos.CalculadoraPrestamos"
-             Title="Calculadora de Préstamos">
-
+             x:Class="PrestApp.Views.Prestamista.Préstamos.RegistroPrestamoPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="PrestApp - Creando un préstamo" Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
+            <Custom:SimpleCustomEntry x:Name="txtCliente" 
+                   Placeholder="Nombre del cliente" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
             <Custom:SimpleCustomEntry x:Name="txtMonto" 
-                   Placeholder="Monto del prestamo" 
+                   Placeholder="Monto del préstamo" 
                    PlaceholderColor="#052A48"
                    TextColor="#052A48"
                    FontSize="16" 
@@ -19,23 +28,39 @@
                    FontAttributes="Bold"
                    Opacity="0.7"/>
             <Custom:SimpleCustomEntry x:Name="txtInteres" 
-                   Placeholder="Interes (0.0)" 
+                   Placeholder="Interés (0.0)" 
                    PlaceholderColor="#052A48"
                    TextColor="#052A48"
                    FontSize="16" 
                    Margin="20, 15" 
                    FontAttributes="Bold"
                    Opacity="0.7"/>
-            <Custom:SimpleCustomEntry x:Name="txtTiempo" 
-                   Placeholder="Plazo (En meses)" 
+            <Custom:SimpleCustomEntry x:Name="txtCuotas" 
+                   Placeholder="Cuotas en RD$" 
                    PlaceholderColor="#052A48"
                    TextColor="#052A48"
                    FontSize="16" 
                    Margin="20, 15" 
                    FontAttributes="Bold"
                    Opacity="0.7"/>
-            <Button x:Name="btnCalcular" 
-                    Text="Calcular" 
+            <Custom:SimpleCustomEntry x:Name="txtFechaC" 
+                   Placeholder="Fecha de Creación" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtFechaP" 
+                   Placeholder="Fecha del 1er Pago" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Button x:Name="btnRegistroPrestamo" 
+                    Text="Registrar Préstamo" 
                     HorizontalOptions="Center" 
                     WidthRequest="180" 
                     Margin="20" 
@@ -45,7 +70,7 @@
                     BorderColor="White" 
                     CornerRadius="15" 
                     Opacity="0.7"
-                    Clicked="BtnCalcular_Clicked"/>
+                    Clicked="BtnRegistroPrestamo_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -13,6 +13,18 @@
                 FontSize="Medium"
                 FontAttributes="Bold"
                 TextColor="#052A48"/>
+            <Button Text="Crear Préstamo"
+                     Padding="20,0,20,0"
+                     BackgroundColor="#052A48"
+                     TextColor="White"
+                     FontAttributes="Bold"
+                     BorderColor="White"
+                     BorderWidth="2"
+                     CornerRadius="8"
+                     x:Name="btnCrearPrestamo"
+                     Margin="40, 90, 40, 0"
+                     Clicked="BtnCrearPrestamo_Clicked"/>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

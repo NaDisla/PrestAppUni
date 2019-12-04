@@ -55,6 +55,10 @@ namespace PrestApp.Views.Usuarios
                 Navigation.PushAsync(new MasterPrestamistaPage());
                 DisplayAlert("Inicio de sesión satisfactorio", "Bienvenido(a) " + txtUsuarioLogin.Text, "Continuar");
             }
+            else
+            {
+                DisplayAlert("Inicio de sesión incorrecto!", "Por favor intente de nuevo " + txtUsuarioLogin.Text, "Continuar");
+            }
         }
     }
 }

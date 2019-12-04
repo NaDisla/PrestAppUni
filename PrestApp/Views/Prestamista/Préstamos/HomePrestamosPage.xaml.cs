@@ -16,5 +16,10 @@ namespace PrestApp.Views.Prestamista.Préstamos
         {
             InitializeComponent();
         }
+
+        private void BtnCrearPrestamo_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegistroPrestamoPage());
+        }
     }
 }
