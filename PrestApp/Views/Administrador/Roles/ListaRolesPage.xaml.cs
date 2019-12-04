@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
-namespace PrestApp.Views.Roles
+namespace PrestApp.Views.Administrador.Roles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaRolesPage : ContentPage
@@ -31,6 +31,11 @@ namespace PrestApp.Views.Roles
             rolesListView.ItemsSource = _roles;
 
             base.OnAppearing();
+        }
+
+        private void BtnAgregarRol_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegistroRolesPage());
         }
     }
 }

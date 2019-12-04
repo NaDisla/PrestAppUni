@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using PrestApp.Clases;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using PrestApp.Views.Roles;
+using PrestApp.Views.Administrador.Roles;
 
-namespace PrestApp.Views.Roles
+namespace PrestApp.Views.Administrador.Roles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistroRolesPage : ContentPage

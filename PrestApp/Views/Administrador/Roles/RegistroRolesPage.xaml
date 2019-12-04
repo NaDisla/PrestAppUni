@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.Views.Roles.RegistroRolesPage">
+             x:Class="PrestApp.Views.Administrador.Roles.RegistroRolesPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="PrestApp - Agregar nuevo rol" Order="Primary" Priority="0"/>

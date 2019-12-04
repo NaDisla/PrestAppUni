@@ -4,12 +4,26 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PrestApp.Views.Administrador.AdministradorHomePage">
+             x:Class="PrestApp.Views.Administrador.AdministradorHomePage"
+             Title="PrestApp - Inicio">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Image Source="logoV6.png"
+                   Margin="40,15,40,0"/>
+            <Label Text="¡Bienvenido a la gestión móvil de préstamos!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                TextColor="#052A48"
+                Margin="0,-160,0,0"/>
+            <Label Text="Para poder acceder al menú de opciones, desliza el lado izquierdo o tapea el ícono ubicado en la esquina superior izquierda. "
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                TextColor="#052A48"
+                Margin="0,-60,0,30"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

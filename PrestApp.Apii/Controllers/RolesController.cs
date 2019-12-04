@@ -46,8 +46,8 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("api/RolesInsert/{id}")]
-        [HttpGet]
+        [Route("api/Roles/Insert/{id}")]
+        [HttpPost]
         public ObjectResult Insert(ClRoles Rol)
         {
             try
@@ -62,8 +62,8 @@ namespace PrestApp.Apii.Controllers
             }
         }
 
-        [Route("api/RolesUpdate")]
-        [HttpGet]
+        [Route("api/Roles/Update")]
+        [HttpPut]
         public ObjectResult Update(ClRoles Rol)
         {
             try
@@ -79,7 +79,7 @@ namespace PrestApp.Apii.Controllers
         }
 
         [Route("api/Roles/Delete/{id}")]
-        [HttpGet]
+        [HttpDelete]
         public ObjectResult Delete(ClRoles id)
         {
             try

@@ -15,8 +15,6 @@ namespace PrestApp.Views.Prestamista
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePrestamistaPage : ContentPage
     {
-
-
         public HomePrestamistaPage()
         {
             InitializeComponent();

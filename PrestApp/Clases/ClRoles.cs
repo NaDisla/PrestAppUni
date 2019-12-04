@@ -2,16 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PrestApp.Clases
 {
-
     public class ClRoles
     {
-
-
         public int IdRol
         {
             get;
