@@ -80,7 +80,7 @@ namespace PrestApp.Apii.Controllers
 
         [Route("api/Roles/Delete/{id}")]
         [HttpDelete]
-        public ObjectResult Delete(ClRoles id)
+        public ObjectResult Delete(int id)
         {
             try
             {

@@ -26,7 +26,7 @@ namespace PrestApp.Api.Controllers
                 foreach (var item in Amortizaciones)
                 {
                     item.Clientes = dataClietne.Obtener(item.Cli_ID);
-                    item.Prestamo = dataPrestamo.Obtener(item.Prest_ID);
+                    item.Prestamos = dataPrestamo.Obtener(item.Prest_ID);
                     item.ClModalidadesDePago = dataModPago.Obtener(item.ModPag_ID);
                 }
                 return Ok(Amortizaciones);
@@ -46,7 +46,7 @@ namespace PrestApp.Api.Controllers
             {
                 var pago = generic.Obtener(id);
                 pago.Clientes = dataClietne.Obtener(pago.Cli_ID);
-                pago.Prestamo = dataPrestamo.Obtener(pago.Prest_ID);
+                pago.Prestamos = dataPrestamo.Obtener(pago.Prest_ID);
                 pago.ClModalidadesDePago = dataModPago.Obtener(pago.ModPag_ID);
                 return Ok(pago);
             }
