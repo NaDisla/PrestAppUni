@@ -30,8 +30,7 @@ namespace PrestApp.Views.Prestamista.Préstamos
             decimal ganancia = monto * interes;
             cuotas = (monto / meses) + (ganancia/meses);
             cuotas = Math.Round(cuotas, 2);
-            await DisplayAlert("Cálculo de cuotas", "Usted deberá pagar RD$" + cuotas + " durante " + meses+" meses", "OK");
-
+            await DisplayAlert("Cálculo de cuotas", "La cuota para este préstamo será de RD$" + cuotas + " durante " + meses+" meses.", "OK");
         }
     }
 }
