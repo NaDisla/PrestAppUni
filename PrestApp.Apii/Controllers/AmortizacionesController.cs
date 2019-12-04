@@ -12,6 +12,9 @@ namespace PrestApp.Api.Controllers
     public class AmortizacionesController : ControllerBase
     {
         private ICRUDModel<ClAmortizaciones> generic = new CRUDModel<ClAmortizaciones>();
+        private ICRUDModel<ClClientes> dataClietne = new CRUDModel<ClClientes>();
+        private ICRUDModel<ClPrestamos> dataPrestamo = new CRUDModel<ClPrestamos>();
+        private ICRUDModel<ClModalidadesDePago> dataModPago = new CRUDModel<ClModalidadesDePago>();
 
         [Route("api/Amortizaciones/Get")]
         [HttpGet]
@@ -19,8 +22,14 @@ namespace PrestApp.Api.Controllers
         {
             try
             {
-                var pagos = generic.ObtenerTodos();
-                return Ok(pagos);
+                var Amortizaciones = generic.ObtenerTodos();
+                foreach (var item in Amortizaciones)
+                {
+                    item.Clientes = dataClietne.Obtener(item.Cli_ID);
+                    item.Prestamo = dataPrestamo.Obtener(item.Prest_ID);
+                    item.ClModalidadesDePago = dataModPago.Obtener(item.ModPag_ID);
+                }
+                return Ok(Amortizaciones);
             }
             catch (Exception e)
             {
@@ -36,6 +45,9 @@ namespace PrestApp.Api.Controllers
             try
             {
                 var pago = generic.Obtener(id);
+                pago.Clientes = dataClietne.Obtener(pago.Cli_ID);
+                pago.Prestamo = dataPrestamo.Obtener(pago.Prest_ID);
+                pago.ClModalidadesDePago = dataModPago.Obtener(pago.ModPag_ID);
                 return Ok(pago);
             }
             catch (Exception e)
@@ -77,13 +89,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("api/Amortizaciones/Delete")]
+        [Route("api/Amortizaciones/Delete/{id}")]
         [HttpDelete]
-        public ObjectResult Delete(ClAmortizaciones id)
+        public ObjectResult Delete(int id)
         {
             try
             {
-                var ok = generic.Eliminar(id.Amort_ID);
+                var ok = generic.Eliminar(id);
                 return Ok(ok);
             }
             catch (Exception e)
