@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:Custom="clr-namespace:PrestApp.Customs"
+             x:Class="PrestApp.Views.Prestamista.Préstamos.RegistroPrestamoPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="PrestApp - Creando un préstamo" Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Custom:SimpleCustomEntry x:Name="txtCliente" 
+                   Placeholder="Nombre del cliente" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtMonto" 
+                   Placeholder="Monto del préstamo" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtInteres" 
+                   Placeholder="Interés (0.0)" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtCuotas" 
+                   Placeholder="Cuotas en RD$" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtFechaC" 
+                   Placeholder="Fecha de Creación" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtFechaP" 
+                   Placeholder="Fecha del 1er Pago" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Button x:Name="btnRegistroPrestamo" 
+                    Text="Registrar Préstamo" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="180" 
+                    Margin="20" 
+                    BackgroundColor="#379FC0" 
+                    TextColor="White" 
+                    BorderWidth="3" 
+                    BorderColor="White" 
+                    CornerRadius="15" 
+                    Opacity="0.7"
+                    Clicked="BtnRegistroPrestamo_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
