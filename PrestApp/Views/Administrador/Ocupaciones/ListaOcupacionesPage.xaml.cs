@@ -15,7 +15,7 @@ namespace PrestApp.Views.Administrador.Ocupaciones
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaOcupacionesPage : ContentPage
     {
-        private const string Url = "https://prestappapi.azurewebsites.net/api/ocupaciones/get";
+        private const string Url = "https://prestappapi.azurewebsites.net/api/Ocupaciones/Get";
         private readonly HttpClient client = new HttpClient();
         private ObservableCollection<ClOcupaciones> _ocupaciones;
 

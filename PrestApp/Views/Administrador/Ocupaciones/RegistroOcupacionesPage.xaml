@@ -8,7 +8,7 @@
              xmlns:ViewModel="clr-namespace:PrestApp.ViewModels"
              x:Class="PrestApp.Views.Administrador.Ocupaciones.RegistroOcupacionesPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="PrestApp - Agregar nuevo rol" Order="Primary" Priority="0"/>
+        <ToolbarItem Text="PrestApp - Agregando nueva Ocupación" Order="Primary" Priority="0"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
@@ -25,7 +25,7 @@
                     HorizontalOptions="Center" 
                     WidthRequest="180" 
                     Margin="20" 
-                    BackgroundColor="#8DC63D" 
+                    BackgroundColor="#379FC0" 
                     TextColor="White" 
                     BorderWidth="3" 
                     BorderColor="White" 

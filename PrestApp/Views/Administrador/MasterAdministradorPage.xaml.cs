@@ -8,6 +8,7 @@ using PrestApp.Views.Prestamista.Préstamos;
 using PrestApp.Views.Prestamista.Clientes;
 using PrestApp.Views.Prestamista.Pagos;
 using PrestApp.Views.Prestamista.MenuItems;
+using PrestApp.Views.Administrador.Ocupaciones;
 using PrestApp.Views.Administrador.Roles;
 using PrestApp.Views.Usuarios;
 using Xamarin.Forms;
@@ -102,7 +103,7 @@ namespace PrestApp.Views.Administrador
             {
                 Title = "Ocupaciones",
                 Icon = "ocupacion.png",
-                TargetType = typeof(ListaUsuariosPage)
+                TargetType = typeof(ListaOcupacionesPage)
             };
             ListadoMenu.Add(pag11);
             MasterAdministradorItem pag12 = new MasterAdministradorItem()

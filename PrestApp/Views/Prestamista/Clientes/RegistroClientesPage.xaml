@@ -11,7 +11,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="#379FC0" Opacity="0.8"/>
+            <StackLayout BackgroundColor="#379FC0" Opacity="0.8">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -160,7 +160,8 @@
                                Margin="17,-20,22,0"                   
                                Opacity="0.7"
                                HorizontalOptions="Start"
-                               WidthRequest="145"/>
+                               WidthRequest="145"
+                                x:Name="dtpFechaNacimiento"/>
                         </StackLayout>
                     </StackLayout>
 
@@ -200,7 +201,7 @@
                                         Opacity="0.8"/>
                     </StackLayout>
                 </Grid>
-            
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
