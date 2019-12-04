@@ -46,7 +46,7 @@ namespace PrestApp.Api.Controllers
         }
 
         [Route("api/Ocupaciones/Insert")]
-        [HttpGet]
+        [HttpPost]
         public ObjectResult Insert(ClOcupaciones pago)
         {
             try
@@ -62,13 +62,13 @@ namespace PrestApp.Api.Controllers
         }
 
         [Route("api/Ocupaciones/Update")]
-        [HttpGet]
-        public ObjectResult Update(ClOcupaciones pago)
+        [HttpPut]
+        public ObjectResult Update(ClOcupaciones ocupacion)
         {
             try
             {
-                var prestamo = generic.Actualizar(pago);
-                return Ok(prestamo);
+                var Success = generic.Actualizar(ocupacion);
+                return Ok(Success);
             }
             catch (Exception e)
             {
@@ -77,13 +77,13 @@ namespace PrestApp.Api.Controllers
             }
         }
 
-        [Route("api/Ocupaciones/Delete")]
-        [HttpGet]
-        public ObjectResult Delete(ClOcupaciones id)
+        [Route("api/Ocupaciones/Delete/{id}")]
+        [HttpDelete]
+        public ObjectResult Delete(int id)
         {
             try
             {
-                var ok = generic.Eliminar(id.Ocu_ID);
+                var ok = generic.Eliminar(id);
                 return Ok(ok);
             }
             catch (Exception e)
