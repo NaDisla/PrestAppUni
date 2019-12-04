@@ -4,16 +4,48 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:Custom="clr-namespace:PrestApp.Customs"
              x:Class="PrestApp.Views.Prestamista.Préstamos.CalculadoraPrestamos"
              Title="Calculadora de Préstamos">
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Aquí estará la calculadora de préstamos"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                FontAttributes="Bold"
-                TextColor="#052A48"
-                FontSize="Medium"/>
+            <Custom:SimpleCustomEntry x:Name="txtMonto" 
+                   Placeholder="Monto del prestamo" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtInteres" 
+                   Placeholder="Interes (0.0)" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Custom:SimpleCustomEntry x:Name="txtTiempo" 
+                   Placeholder="Plazo (En meses)" 
+                   PlaceholderColor="#052A48"
+                   TextColor="#052A48"
+                   FontSize="16" 
+                   Margin="20, 15" 
+                   FontAttributes="Bold"
+                   Opacity="0.7"/>
+            <Button x:Name="btnCalcular" 
+                    Text="Calcular" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="180" 
+                    Margin="20" 
+                    BackgroundColor="#379FC0" 
+                    TextColor="White" 
+                    BorderWidth="3" 
+                    BorderColor="White" 
+                    CornerRadius="15" 
+                    Opacity="0.7"
+                    Clicked="BtnCalcular_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
