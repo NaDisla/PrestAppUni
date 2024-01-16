@@ -22,7 +22,7 @@
     <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
     <PackageReference Include="Rg.Plugins.Popup.Gmo" Version="1.1.5.3" />
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="17.3.0.29" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="UXDivers.Effects" Version="0.6.3" />
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991210-pre2" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
